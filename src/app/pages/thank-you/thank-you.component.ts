@@ -1,6 +1,7 @@
 import {
-    Component,
-    OnInit
+  Component,
+  OnInit,
+  ChangeDetectionStrategy
 } from '@angular/core';
 
 import {
@@ -11,6 +12,7 @@ import {
     selector: 'app-thank-you',
     templateUrl: './thank-you.component.html',
     styleUrls: ['./thank-you.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ThankYouComponent implements OnInit {

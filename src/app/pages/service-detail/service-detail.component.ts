@@ -1,7 +1,8 @@
 import {
-    Component,
-    OnDestroy,
-    OnInit
+  Component,
+  OnDestroy,
+  OnInit,
+  ChangeDetectionStrategy
 } from '@angular/core';
 
 import {
@@ -27,6 +28,7 @@ import {
     selector: 'app-service-detail',
     templateUrl: './service-detail.component.html',
     styleUrls: ['./service-detail.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ServiceDetailComponent

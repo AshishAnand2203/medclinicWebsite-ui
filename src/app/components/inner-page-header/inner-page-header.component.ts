@@ -1,6 +1,7 @@
 import {
-    Component,
-    Input
+  Component,
+  Input,
+  ChangeDetectionStrategy
 } from '@angular/core';
 
 
@@ -8,6 +9,7 @@ import {
     selector: 'app-inner-page-header',
     templateUrl: './inner-page-header.component.html',
     styleUrls: ['./inner-page-header.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class InnerPageHeaderComponent {

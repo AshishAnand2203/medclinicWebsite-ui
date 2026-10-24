@@ -1,9 +1,10 @@
 import {
-    AfterViewInit,
-    Component,
-    ElementRef,
-    OnDestroy,
-    OnInit
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnDestroy,
+  OnInit,
+  ChangeDetectionStrategy
 } from '@angular/core';
 
 import {
@@ -22,6 +23,7 @@ import {
     selector: 'app-pharmacy',
     templateUrl: './pharmacy.component.html',
     styleUrls: ['./pharmacy.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class PharmacyComponent

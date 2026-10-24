@@ -4,6 +4,7 @@ import {
   ElementRef,
   OnDestroy,
   OnInit,
+  ChangeDetectionStrategy
 } from '@angular/core';
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -21,6 +22,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
     selector: 'app-contact-us',
     templateUrl: './contact-us.component.html',
     styleUrls: ['./contact-us.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ContactUsComponent implements OnInit, AfterViewInit, OnDestroy {

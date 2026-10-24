@@ -1,6 +1,7 @@
 import {
-    Component,
-    OnInit
+  Component,
+  OnInit,
+  ChangeDetectionStrategy
 } from '@angular/core';
 
 import {
@@ -20,6 +21,7 @@ import {
     selector: 'app-general-practitioners',
     templateUrl: './general-practitioners.component.html',
     styleUrls: ['./general-practitioners.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class GeneralPractitionersComponent implements OnInit {

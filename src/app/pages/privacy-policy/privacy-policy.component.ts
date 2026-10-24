@@ -1,6 +1,7 @@
 import {
-    Component,
-    OnInit
+  Component,
+  OnInit,
+  ChangeDetectionStrategy
 } from '@angular/core';
 
 import {
@@ -19,6 +20,7 @@ import {
     selector: 'app-privacy-policy',
     templateUrl: './privacy-policy.component.html',
     styleUrls: ['./privacy-policy.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class PrivacyPolicyComponent implements OnInit {

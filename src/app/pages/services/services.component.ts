@@ -1,6 +1,7 @@
 import {
-    Component,
-    OnInit
+  Component,
+  OnInit,
+  ChangeDetectionStrategy
 } from '@angular/core';
 
 import {
@@ -20,6 +21,7 @@ import {
     selector: 'app-services',
     templateUrl: './services.component.html',
     styleUrls: ['./services.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ServicesComponent implements OnInit {

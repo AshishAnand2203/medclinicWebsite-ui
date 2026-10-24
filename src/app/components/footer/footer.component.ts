@@ -1,7 +1,8 @@
 import {
-    Component,
-    HostListener,
-    OnInit
+  Component,
+  HostListener,
+  OnInit,
+  ChangeDetectionStrategy
 } from '@angular/core';
 
 import {
@@ -17,6 +18,7 @@ import {
     selector: 'app-footer',
     templateUrl: './footer.component.html',
     styleUrls: ['./footer.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class FooterComponent implements OnInit {

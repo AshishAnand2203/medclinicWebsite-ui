@@ -1,7 +1,8 @@
 import {
-    Component,
-    HostListener,
-    OnInit
+  Component,
+  HostListener,
+  OnInit,
+  ChangeDetectionStrategy
 } from '@angular/core';
 
 import {
@@ -13,6 +14,7 @@ import {
     selector: 'app-header',
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class HeaderComponent implements OnInit {

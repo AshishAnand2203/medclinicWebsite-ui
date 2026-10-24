@@ -1,9 +1,10 @@
 import {
-    AfterViewInit,
-    Component,
-    ElementRef,
-    OnDestroy,
-    OnInit
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnDestroy,
+  OnInit,
+  ChangeDetectionStrategy
 } from '@angular/core';
 
 import {
@@ -23,6 +24,7 @@ import {
     selector: 'app-about-us',
     templateUrl: './about-us.component.html',
     styleUrls: ['./about-us.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class AboutUsComponent

@@ -1,9 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
     selector: 'app-appointment-cta',
     templateUrl: './appointment-cta.component.html',
     styleUrls: ['./appointment-cta.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class AppointmentCtaComponent {
