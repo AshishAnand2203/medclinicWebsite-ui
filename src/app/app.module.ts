@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,32 +22,25 @@ import { ThankYouComponent } from './pages/thank-you/thank-you.component';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
 import { GeneralPractitionersComponent } from './pages/general-practitioners/general-practitioners.component';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    HomeComponent,
-    AboutUsComponent,
-    AppointmentCtaComponent,
-    ServicesComponent,
-    InnerPageHeaderComponent,
-    ServiceDetailComponent,
-    PharmacyComponent,
-    ContactUsComponent,
-    ThankYouComponent,
-    PrivacyPolicyComponent,
-    GeneralPractitionersComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    CarouselModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        HeaderComponent,
+        FooterComponent,
+        HomeComponent,
+        AboutUsComponent,
+        AppointmentCtaComponent,
+        ServicesComponent,
+        InnerPageHeaderComponent,
+        ServiceDetailComponent,
+        PharmacyComponent,
+        ContactUsComponent,
+        ThankYouComponent,
+        PrivacyPolicyComponent,
+        GeneralPractitionersComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        CarouselModule,
+        ReactiveFormsModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
