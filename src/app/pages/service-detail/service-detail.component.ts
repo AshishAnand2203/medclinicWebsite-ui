@@ -26,7 +26,8 @@ import {
 @Component({
     selector: 'app-service-detail',
     templateUrl: './service-detail.component.html',
-    styleUrls: ['./service-detail.component.css']
+    styleUrls: ['./service-detail.component.css'],
+    standalone: false
 })
 export class ServiceDetailComponent
     implements OnInit, OnDestroy {

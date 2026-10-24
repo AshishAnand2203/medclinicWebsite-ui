@@ -19,7 +19,8 @@ import {
 @Component({
     selector: 'app-general-practitioners',
     templateUrl: './general-practitioners.component.html',
-    styleUrls: ['./general-practitioners.component.css']
+    styleUrls: ['./general-practitioners.component.css'],
+    standalone: false
 })
 export class GeneralPractitionersComponent implements OnInit {
 

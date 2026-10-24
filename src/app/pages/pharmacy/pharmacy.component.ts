@@ -21,7 +21,8 @@ import {
 @Component({
     selector: 'app-pharmacy',
     templateUrl: './pharmacy.component.html',
-    styleUrls: ['./pharmacy.component.css']
+    styleUrls: ['./pharmacy.component.css'],
+    standalone: false
 })
 export class PharmacyComponent
     implements OnInit, AfterViewInit, OnDestroy {

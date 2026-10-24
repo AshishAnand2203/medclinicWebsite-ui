@@ -7,7 +7,8 @@ import {
 @Component({
     selector: 'app-inner-page-header',
     templateUrl: './inner-page-header.component.html',
-    styleUrls: ['./inner-page-header.component.css']
+    styleUrls: ['./inner-page-header.component.css'],
+    standalone: false
 })
 export class InnerPageHeaderComponent {
 

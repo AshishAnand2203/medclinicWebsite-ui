@@ -3,7 +3,8 @@ import { Component, Input } from '@angular/core';
 @Component({
     selector: 'app-appointment-cta',
     templateUrl: './appointment-cta.component.html',
-    styleUrls: ['./appointment-cta.component.css']
+    styleUrls: ['./appointment-cta.component.css'],
+    standalone: false
 })
 export class AppointmentCtaComponent {
 

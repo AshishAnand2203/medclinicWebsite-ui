@@ -10,7 +10,8 @@ import {
 @Component({
     selector: 'app-thank-you',
     templateUrl: './thank-you.component.html',
-    styleUrls: ['./thank-you.component.css']
+    styleUrls: ['./thank-you.component.css'],
+    standalone: false
 })
 export class ThankYouComponent implements OnInit {
 
