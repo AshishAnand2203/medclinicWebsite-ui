@@ -1,13 +1,12 @@
 import {
-    Inject,
-    Injectable,
-    Renderer2,
-    RendererFactory2
+  Inject,
+  Injectable,
+  Renderer2,
+  RendererFactory2,
+  DOCUMENT
 } from '@angular/core';
 
-import {
-    DOCUMENT
-} from '@angular/common';
+
 
 import {
     Meta,
