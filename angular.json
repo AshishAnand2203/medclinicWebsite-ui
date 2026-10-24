@@ -99,7 +99,8 @@
     }
   },
   "cli": {
-    "analytics": false
+    "analytics": false,
+    "packageManager": "npm"
   },
   "schematics": {
     "@schematics/angular:component": {
