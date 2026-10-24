@@ -1,0 +1,86 @@
+<!-- =========================================================
+     INNER PAGE HEADER
+========================================================= -->
+
+<app-inner-page-header
+    title="{{ page?.title || 'About Us' }}">
+</app-inner-page-header>
+
+
+
+
+<!-- =========================================================
+     LOADING
+========================================================= -->
+
+<!-- =========================================================
+     COMMON PAGE LOADING
+========================================================= -->
+
+<section
+    class="common-page-state"
+    *ngIf="isLoading">
+
+    <div class="container">
+
+        <div class="common-page-loading">
+
+            <span class="common-page-loader"></span>
+
+            <span class="common-page-loading-text">
+                Loading...
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ERROR
+========================================================= -->
+
+<section
+    class="about-page about-page-state"
+    *ngIf="!isLoading && errorMessage">
+
+    <div class="container">
+
+        <div class="page-error">
+            {{ errorMessage }}
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CMS PAGE CONTENT
+========================================================= -->
+
+<section
+    class="about-page"
+    *ngIf="!isLoading && page">
+
+    <div class="container">
+
+        <div
+            class="cms-content"
+            [innerHTML]="page.content">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     APPOINTMENT CTA
+========================================================= -->
+
+<app-appointment-cta
+    *ngIf="!isLoading && page">
+</app-appointment-cta>

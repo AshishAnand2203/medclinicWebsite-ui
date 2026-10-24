@@ -1,0 +1,269 @@
+<!-- =========================================================
+     INNER PAGE HEADER
+========================================================= -->
+
+<app-inner-page-header
+    [title]="service?.title || 'Service Details'">
+</app-inner-page-header>
+
+
+<!-- =========================================================
+     LOADING
+========================================================= -->
+
+<section
+    class="common-page-state"
+    *ngIf="isLoading">
+
+    <div class="container">
+
+        <div class="common-page-loading">
+
+            <span class="common-page-loader"></span>
+
+            <span class="common-page-loading-text">
+                Loading...
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ERROR
+========================================================= -->
+
+<section
+    class="service-detail-section"
+    *ngIf="!isLoading && errorMessage">
+
+    <div class="container">
+
+        <div class="service-detail-message">
+
+            <div class="service-detail-message-icon">
+
+                <i
+                    class="
+                        fa-solid
+                        fa-circle-exclamation
+                    ">
+                </i>
+
+            </div>
+
+
+            <h3>
+                Service unavailable
+            </h3>
+
+
+            <p>
+                {{ errorMessage }}
+            </p>
+
+
+            <a
+                routerLink="/services"
+                class="service-back-button">
+
+                <i
+                    class="
+                        fa-solid
+                        fa-arrow-left
+                    ">
+                </i>
+
+                <span>
+                    Back to Services
+                </span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SERVICE DETAILS
+========================================================= -->
+
+<ng-container
+    *ngIf="
+        !isLoading &&
+        !errorMessage &&
+        service
+    ">
+
+
+    <section class="service-detail-section">
+
+        <div class="container">
+            <div class="service-main-content">
+
+    <div class="service-content-heading">
+
+        <span>
+            About this service
+        </span>
+
+        <h2>
+            {{ service.title }}
+        </h2>
+
+    </div>
+
+
+    <div
+    class="service-cms-content"
+    [innerHTML]="service.content"
+    (click)="onCmsContentClick($event)">
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     SERVICE ACTIONS
+====================================================== -->
+
+<div class="service-action-panel">
+
+    <!-- BOOK APPOINTMENT -->
+
+    <div class="service-action-intro">
+
+        <span class="service-action-icon">
+
+            <i class="fa-solid fa-stethoscope"></i>
+
+        </span>
+
+        <div>
+
+            <small>
+                Need medical care?
+            </small>
+
+            <h3>
+                We're here when you need us.
+            </h3>
+
+        </div>
+
+    </div>
+
+
+    <!-- BOOK -->
+
+    <a
+        *ngIf="settings?.appointment_url"
+        [href]="settings.appointment_url"
+        target="_blank"
+        rel="noopener"
+        class="service-action-item service-action-book">
+
+        <span class="service-action-item-icon">
+            <i class="fa-solid fa-calendar-check"></i>
+        </span>
+
+        <span class="service-action-text">
+
+            <small>
+                Book your visit
+            </small>
+
+            <strong>
+                Book an Appointment
+            </strong>
+
+        </span>
+
+        <i class="fa-solid fa-arrow-right"></i>
+
+    </a>
+
+
+    <!-- PHONE -->
+
+    <a
+        *ngIf="settings?.contact_phone"
+        [href]="'tel:' + settings.contact_phone"
+        class="service-action-item">
+
+        <span class="service-action-item-icon">
+            <i class="fa-solid fa-phone"></i>
+        </span>
+
+        <span class="service-action-text">
+
+            <small>
+                Speak with our team
+            </small>
+
+            <strong>
+                {{ settings.contact_phone }}
+            </strong>
+
+        </span>
+
+    </a>
+
+
+    <!-- EMAIL -->
+
+    <a
+        *ngIf="settings?.contact_email"
+        [href]="'mailto:' + settings.contact_email"
+        class="service-action-item">
+
+        <span class="service-action-item-icon">
+            <i class="fa-solid fa-envelope"></i>
+        </span>
+
+        <span class="service-action-text">
+
+            <small>
+                Email us
+            </small>
+
+            <strong>
+                {{ settings.contact_email }}
+            </strong>
+
+        </span>
+
+    </a>
+
+</div>
+
+
+<a
+    routerLink="/services"
+    class="service-all-link">
+
+    <span class="service-all-link-icon">
+        <i class="fa-solid fa-arrow-left"></i>
+    </span>
+
+    <span>
+        View all services
+    </span>
+
+</a>
+        </div>
+
+    </section>
+
+
+
+
+
+
+</ng-container>

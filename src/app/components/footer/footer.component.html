@@ -1,0 +1,460 @@
+<!-- =========================================================
+     BACK TO TOP
+========================================================= -->
+
+<button
+    type="button"
+    id="back_to_top"
+    title="Go to top"
+    [style.display]="showBackToTop ? 'block' : 'none'"
+    (click)="scrollToTop()">
+
+    <img
+        src="assets/images/side_top.png"
+        alt="Back to top">
+
+</button>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer_bg">
+
+    <div class="container-fluid">
+
+        <div
+            class="
+                row
+                row-cols-lg-5
+                row-cols-md-2
+                row-cols-sm-1
+                row-cols-1
+                justify-content-center
+            ">
+
+
+            <!-- =================================================
+                 LOGO / SOCIAL
+            ================================================== -->
+
+            <div class="col ft_rtbd footer_cust">
+
+                <div class="footer_head ps-0">
+
+                    <div class="footer_logo">
+
+                        <a routerLink="/">
+
+                            <img
+                                src="assets/images/logo.png"
+                                [alt]="
+                                    settings?.site_name ||
+                                    'Medclinic Family Practice'
+                                ">
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- SOCIAL -->
+
+                    <div
+                        class="footer_socialbox"
+                        *ngIf="
+                            settings?.facebook_url ||
+                            settings?.instagram_url ||
+                            settings?.linkedin_url
+                        ">
+
+
+                        <!-- FACEBOOK -->
+
+                        <a
+                            *ngIf="settings?.facebook_url"
+                            [href]="settings.facebook_url"
+                            target="_blank"
+                            rel="noopener"
+                            aria-label="Facebook">
+
+                            <img
+                                src="assets/images/facebook_fticon.png"
+                                alt="Facebook">
+
+                        </a>
+
+
+                        <!-- INSTAGRAM -->
+
+                        <a
+                            *ngIf="settings?.instagram_url"
+                            [href]="settings.instagram_url"
+                            target="_blank"
+                            rel="noopener"
+                            aria-label="Instagram">
+
+                            <img
+                                src="assets/images/instagram_fticon.png"
+                                alt="Instagram">
+
+                        </a>
+
+
+                        <!-- LINKEDIN -->
+
+                        <a
+                            *ngIf="settings?.linkedin_url"
+                            [href]="settings.linkedin_url"
+                            target="_blank"
+                            rel="noopener"
+                            aria-label="LinkedIn">
+
+                            <img
+                                src="assets/images/linkedin_fticon.png"
+                                alt="LinkedIn">
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 QUICK LINKS
+            ================================================== -->
+
+            <div class="col ft_rtbd footer_cust">
+
+                <div class="footer_head">
+
+                    <div class="footer_texthd">
+                        Quick links
+                    </div>
+
+
+                    <div class="footer_list">
+
+                        <ul>
+
+                            <li>
+
+                                <a routerLink="/">
+                                    Home
+                                </a>
+
+                            </li>
+
+
+                            <li>
+
+                                <a routerLink="/about-us">
+                                    About Us
+                                </a>
+
+                            </li>
+
+
+                            <li>
+
+                                <a routerLink="/general-practitioners">
+                                    Doctors
+                                </a>
+
+                            </li>
+
+
+                            <li>
+
+                                <a routerLink="/pharmacy-medical-centre-warringah-mall-brookvale">
+                                    Pharmacy
+                                </a>
+
+                            </li>
+
+
+                            <li>
+
+                                <a routerLink="/contact-us">
+                                    Contact Us
+                                </a>
+
+                            </li>
+
+
+                            <li>
+
+                                <a routerLink="/policy">
+                                    Policy
+                                </a>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 DYNAMIC SERVICES
+            ================================================== -->
+
+            <div class="col ft_rtbd footer_cust">
+
+                <div class="footer_head">
+
+                    <div class="footer_texthd">
+                        Services
+                    </div>
+
+
+                    <div
+                        class="footer_list"
+                        *ngIf="services.length > 0">
+
+                        <ul>
+
+                            <li
+                                *ngFor="
+                                    let service of services
+                                    | slice:0:6
+                                ">
+
+                                <a
+                                    [routerLink]="
+                                        getServiceUrl(service)
+                                    ">
+
+                                    {{ service.title }}
+
+                                </a>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 CONTACT
+            ================================================== -->
+
+            <div class="col ft_rtbd footer_cust2">
+
+                <div class="footer_head">
+
+                    <div class="footer_texthd">
+                        Contact Us
+                    </div>
+
+
+                    <!-- PHONE -->
+
+                    <div
+                        class="footer_cnt_box"
+                        *ngIf="settings?.contact_phone">
+
+                        <div class="footer_cnt_img">
+
+                            <img
+                                src="assets/images/call_fticon.png"
+                                alt="Phone">
+
+                        </div>
+
+
+                        <div class="footer_cnt_text">
+
+                            <a
+                                [href]="
+                                    getPhoneLink(
+                                        settings.contact_phone
+                                    )
+                                ">
+
+                                {{
+                                    settings.contact_phone
+                                }}
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+
+                    <div
+                        class="footer_cnt_box"
+                        *ngIf="settings?.contact_email">
+
+                        <div class="footer_cnt_img">
+
+                            <img
+                                src="assets/images/email_fticon.png"
+                                alt="Email">
+
+                        </div>
+
+
+                        <div class="footer_cnt_text">
+
+                            <a
+                                [href]="
+                                    getEmailLink(
+                                        settings.contact_email
+                                    )
+                                ">
+
+                                {{
+                                    settings.contact_email
+                                }}
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ADDRESS -->
+
+                    <div
+                        class="footer_cnt_box"
+                        *ngIf="settings?.address">
+
+                        <div class="footer_cnt_img">
+
+                            <img
+                                src="assets/images/locate_fticon.png"
+                                alt="Address">
+
+                        </div>
+
+
+                        <div class="footer_cnt_text">
+
+                            {{ settings.address }}
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FAX -->
+
+                    <div
+                        class="footer_cnt_box"
+                        *ngIf="settings?.fax">
+
+                        <div class="footer_cnt_img">
+
+                            <img
+                                src="assets/images/fax_fticon.png"
+                                alt="Fax">
+
+                        </div>
+
+
+                        <div class="footer_cnt_text">
+
+                            Fax :
+                            {{ settings.fax }}
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 ABOUT
+            ================================================== -->
+
+            <div class="col footer_cust footer_cust2">
+
+                <div class="footer_head">
+
+                    <!-- DYNAMIC FOOTER TEXT -->
+
+                    <div
+                        class="footer_textpra"
+                        *ngIf="settings?.footer_description">
+
+                        {{
+                            settings.footer_description
+                        }}
+
+                    </div>
+
+
+                    <!-- FALLBACK -->
+
+                    <div
+                        class="footer_textpra"
+                        *ngIf="!settings?.footer_description">
+
+                        Our commitment is to deliver premium
+                        healthcare to the communities of
+                        Brookvale, Dee Why, and Manly.
+
+                        <br><br>
+
+                        Your health, well-being, and dignity are
+                        our top priorities, and we ensure that
+                        every aspect of our care reflects these
+                        values.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         COPYRIGHT
+    ====================================================== -->
+
+    <div class="footer_copy_text">
+
+        Copyright ©
+        {{ currentYear }}.
+
+        All Rights Reserved.
+
+        Designed &amp; SEO by
+
+        <a
+            href="https://jrtechnologiesweb.com/"
+            target="_blank"
+            rel="noopener">
+
+            JR Technologies Web
+
+        </a>
+
+    </div>
+
+</footer>

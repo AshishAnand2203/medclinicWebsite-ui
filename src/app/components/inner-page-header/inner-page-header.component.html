@@ -1,0 +1,160 @@
+<!-- =========================================================
+     COMMON INNER PAGE HEADER
+========================================================= -->
+<section class="inner-page-header">
+  <!-- =====================================================
+         BACKGROUND DECORATIONS
+    ====================================================== -->
+  <div class="
+            inner-banner-decoration
+            decoration-one
+        " aria-hidden="true">
+  </div>
+  <div class="
+            inner-banner-decoration
+            decoration-two
+        " aria-hidden="true">
+  </div>
+  <div class="container">
+    <div class="inner-page-header-content">
+      <!-- =================================================
+                 LEFT: PAGE TITLE
+            ================================================== -->
+      <div class="inner-page-title">
+        <!-- SMALL TITLE -->
+        <span class="page-small-title">
+          {{ smallTitle }}
+        </span>
+        <!-- =============================================
+                     TITLE + ECG
+                ============================================== -->
+        <div class="page-title-row">
+          <!-- PAGE TITLE -->
+          <h1>
+            {{ title }}
+          </h1>
+          <!-- =========================================
+                         ECG
+                    ========================================== -->
+          <div class="page-title-heartbeat" aria-hidden="true">
+            <div class="ecg-track">
+              <!-- ECG GRAPH 1 -->
+              <svg class="heartbeat-svg" viewBox="0 0 300 50" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="ecgGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#0772ba">
+                    </stop>
+                    <stop offset="65%" stop-color="#0784c7">
+                    </stop>
+                    <stop offset="100%" stop-color="#97c954">
+                    </stop>
+                  </linearGradient>
+                </defs>
+                <path class="ecg-line" d="
+                                        M0 25
+                                        L35 25
+                                        L45 25
+                                        L52 21
+                                        L59 29
+                                        L68 9
+                                        L77 41
+                                        L87 25
+                                        L125 25
+                                        L135 25
+                                        L142 21
+                                        L149 29
+                                        L158 9
+                                        L167 41
+                                        L177 25
+                                        L215 25
+                                        L225 25
+                                        L232 21
+                                        L239 29
+                                        L248 9
+                                        L257 41
+                                        L267 25
+                                        L300 25
+                                    ">
+                </path>
+              </svg>
+              <!-- ECG GRAPH 2 -->
+              <svg class="heartbeat-svg" viewBox="0 0 300 50" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="ecgGradientSecond" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#0772ba">
+                    </stop>
+                    <stop offset="65%" stop-color="#0784c7">
+                    </stop>
+                    <stop offset="100%" stop-color="#97c954">
+                    </stop>
+                  </linearGradient>
+                </defs>
+                <path class="
+                                        ecg-line
+                                        ecg-line-second
+                                    " d="
+                                        M0 25
+                                        L35 25
+                                        L45 25
+                                        L52 21
+                                        L59 29
+                                        L68 9
+                                        L77 41
+                                        L87 25
+                                        L125 25
+                                        L135 25
+                                        L142 21
+                                        L149 29
+                                        L158 9
+                                        L167 41
+                                        L177 25
+                                        L215 25
+                                        L225 25
+                                        L232 21
+                                        L239 29
+                                        L248 9
+                                        L257 41
+                                        L267 25
+                                        L300 25
+                                    ">
+                </path>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <!-- TITLE ACCENT -->
+        <div class="page-title-accent" aria-hidden="true">
+          <span></span>
+        </div>
+      </div>
+      <!-- =================================================
+                 RIGHT: BREADCRUMB
+            ================================================== -->
+      <div class="service-breadcrumb">
+        <a routerLink="/">
+          Home
+        </a>
+        <span class="breadcrumb-separator">
+          <i class="
+                            fa-solid
+                            fa-angle-right
+                        ">
+          </i>
+        </span>
+        <span class="breadcrumb-current">
+          {{ title }}
+        </span>
+      </div>
+    </div>
+  </div>
+  <!-- =========================================================
+     ECG DECORATION
+========================================================= -->
+  <div class="service-ecg" aria-hidden="true">
+    <span class="service-ecg-line"></span>
+    <div class="service-ecg-heart">
+      <i class="fa-solid fa-heart-pulse"></i>
+    </div>
+    <span class="service-ecg-line"></span>
+  </div>
+</section>

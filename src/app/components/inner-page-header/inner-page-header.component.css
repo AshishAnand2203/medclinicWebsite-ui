@@ -1,0 +1,309 @@
+/* =========================================================
+   COMMON INNER PAGE HEADER
+========================================================= */
+.inner-page-header {
+  position: relative;
+  width: 100%;
+  padding: 125px 0 14px;
+  background:
+    radial-gradient(
+      circle at 90% 15%,
+      rgba(151, 201, 84, 0.08),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 5% 100%,
+      rgba(7, 114, 186, 0.06),
+      transparent 28%
+    ),
+    linear-gradient(135deg, #f4fafe 0%, #ffffff 52%, #f6faef 100%);
+  border-bottom: 1px solid #e5edf1;
+  overflow: hidden;
+}
+.inner-page-header .container {
+  position: relative;
+  z-index: 5;
+}
+/* =========================================================
+   HEADER CONTENT
+========================================================= */
+.inner-page-header-content {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  width: 100%;
+}
+/* =========================================================
+   PAGE TITLE
+========================================================= */
+.inner-page-title {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 15px 0;
+  text-align: left;
+}
+/* =========================================================
+   SMALL TITLE
+========================================================= */
+.page-small-title {
+  display: block;
+  margin: 0 0 10px;
+  color: #0772ba;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+/* =========================================================
+   TITLE + ECG
+========================================================= */
+.page-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  width: 100%;
+}
+.page-title-row h1 {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0;
+  color: #172832;
+  font-size: 29px;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+}
+/* =========================================================
+   ECG
+========================================================= */
+.page-title-heartbeat {
+  position: relative;
+  flex: 0 0 220px;
+  width: 220px;
+  height: 32px;
+  margin: 0;
+  overflow: hidden;
+}
+.ecg-track {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 200%;
+  height: 100%;
+  animation: ecgContinuousMove 8s linear infinite;
+  will-change: transform;
+}
+.heartbeat-svg {
+  display: block;
+  flex: 0 0 50%;
+  width: 50%;
+  height: 100%;
+  overflow: visible;
+}
+.ecg-line {
+  fill: none;
+  stroke: url(#ecgGradient);
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+.ecg-line-second {
+  stroke: url(#ecgGradientSecond);
+}
+@keyframes ecgContinuousMove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+/* =========================================================
+   TITLE ACCENT
+========================================================= */
+.page-title-accent {
+  position: relative;
+  width: 42px;
+  height: 2px;
+  margin-top: 5px;
+  overflow: hidden;
+  background: #e3edf2;
+  border-radius: 20px;
+}
+.page-title-accent span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #0772ba 0%, #0784c7 60%, #97c954 100%);
+  border-radius: inherit;
+}
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+.service-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 25px;
+  color: #657780;
+  font-size: 14px;
+}
+.service-breadcrumb a {
+  color: #0772ba;
+  font-weight: 600;
+  text-decoration: none;
+}
+.service-breadcrumb i {
+  color: #97c954;
+  font-size: 8px;
+}
+/* =========================================================
+   BACKGROUND DECORATIONS
+========================================================= */
+.inner-banner-decoration {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+}
+.decoration-one {
+  width: 210px;
+  height: 210px;
+  right: -80px;
+  top: -105px;
+  border: 35px solid rgba(7, 114, 186, 0.025);
+}
+.decoration-two {
+  width: 170px;
+  height: 170px;
+  left: -75px;
+  bottom: -135px;
+  background: radial-gradient(circle, rgba(151, 201, 84, 0.1), transparent 68%);
+}
+/* =========================================================
+   TABLET
+========================================================= */
+@media (max-width: 991px) {
+  .inner-page-header {
+    padding: 118px 0 13px;
+  }
+  .inner-page-header-content {
+    gap: 25px;
+  }
+  .page-title-row h1 {
+    font-size: 27px;
+  }
+  .page-title-heartbeat {
+    flex-basis: 170px;
+    width: 170px;
+    height: 29px;
+  }
+}
+/* =========================================================
+   MOBILE
+========================================================= */
+@media (max-width: 767px) {
+  .inner-page-header {
+    padding: 108px 0 13px;
+  }
+  .inner-page-header-content {
+    display: block;
+  }
+  .service-breadcrumb {
+    justify-content: flex-start;
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
+  .service-breadcrumb a,
+  .breadcrumb-current {
+    font-size: 10px;
+  }
+  .breadcrumb-separator i {
+    font-size: 7px;
+  }
+  .inner-page-title {
+    width: 100%;
+    padding: 10px 0 8px;
+  }
+  .page-small-title {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+  .page-title-row {
+    gap: 12px;
+  }
+  .page-title-row h1 {
+    font-size: 23px;
+  }
+  .page-title-heartbeat {
+    flex: 0 1 150px;
+    width: 150px;
+    height: 27px;
+  }
+  .ecg-line {
+    stroke-width: 1.8;
+  }
+}
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+@media (max-width: 480px) {
+  .inner-page-header {
+    padding: 102px 0 11px;
+  }
+  .page-title-row {
+    gap: 9px;
+  }
+  .page-title-row h1 {
+    font-size: 21px;
+  }
+  .page-title-heartbeat {
+    flex: 1 1 auto;
+    width: auto;
+    max-width: 115px;
+    height: 25px;
+  }
+  .page-title-accent {
+    width: 35px;
+    margin-top: 4px;
+  }
+  .service-breadcrumb {
+    gap: 7px;
+  }
+}
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  .ecg-track {
+    animation: none;
+  }
+}
+/* ECG */
+.service-ecg {
+  position: absolute;
+  right: 10%;
+  bottom: 25px;
+  display: flex;
+  align-items: center;
+  opacity: 0.16;
+}
+.service-ecg span {
+  width: 55px;
+  height: 1px;
+  background: #0772ba;
+}
+.service-ecg i {
+  margin: 0 5px;
+  color: #0772ba;
+  font-size: 25px;
+}

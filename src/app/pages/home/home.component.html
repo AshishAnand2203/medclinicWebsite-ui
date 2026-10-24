@@ -1,0 +1,1278 @@
+<!-- =========================================================
+     BANNER
+========================================================= -->
+
+<!-- =========================================================
+     HOME BANNER
+========================================================= -->
+
+<section
+    class="clinic-split-hero"
+    *ngIf="sliders && sliders.length > 0">
+
+    <owl-carousel-o [options]="bannerOptions">
+
+        <ng-container *ngFor="let slider of sliders">
+
+            <ng-template carouselSlide>
+
+                <div class="clinic-split-slide">
+
+                    <!-- ==============================
+                         LEFT TEXT SECTION
+                    =============================== -->
+
+                    <div class="clinic-split-content-section">
+
+                        <span class="clinic-split-circle"></span>
+                        <span class="clinic-split-bottom-shape"></span>
+                        <span class="clinic-split-dots"></span>
+
+                        <div
+                            class="clinic-split-content"
+                            [innerHTML]="slider.subtitle">
+                        </div>
+
+                    </div>
+
+
+                    <!-- ==============================
+                         RIGHT IMAGE SECTION
+                    =============================== -->
+
+                    <div class="clinic-split-image-section">
+
+                        <img
+                            class="clinic-split-image"
+                            [src]="slider.image"
+                            [alt]="slider.title || 'Medclinic Family Practice'"
+                        >
+
+                    </div>
+
+
+                    <!-- ==============================
+                         S CURVE JOIN
+                    =============================== -->
+
+                    <div class="clinic-split-s-divider">
+
+                        <svg
+                            viewBox="0 0 120 500"
+                            preserveAspectRatio="none"
+                            xmlns="http://www.w3.org/2000/svg">
+
+                            <!-- WHITE MAIN SHAPE -->
+                            <path
+                                class="clinic-s-curve-white"
+                                d="
+                                    M0 0
+                                    H72
+
+                                    C108 65,
+                                     108 135,
+                                     78 195
+
+                                    C48 255,
+                                     34 320,
+                                     48 385
+
+                                    C55 425,
+                                     70 465,
+                                     88 500
+
+                                    H0
+                                    Z
+                                "
+                            />
+
+
+                            <!-- LIGHT BLUE LINE -->
+                            <path
+                                class="clinic-s-curve-blue"
+                                d="
+                                    M72 0
+
+                                    C108 65,
+                                     108 135,
+                                     78 195
+
+                                    C48 255,
+                                     34 320,
+                                     48 385
+
+                                    C55 425,
+                                     70 465,
+                                     88 500
+                                "
+                            />
+
+
+                            <!-- GREEN LINE -->
+                            <path
+                                class="clinic-s-curve-green"
+                                d="
+                                    M82 0
+
+                                    C118 65,
+                                     118 135,
+                                     88 195
+
+                                    C58 255,
+                                     44 320,
+                                     58 385
+
+                                    C65 425,
+                                     80 465,
+                                     98 500
+                                "
+                            />
+
+                        </svg>
+
+                    </div>
+
+                </div>
+
+            </ng-template>
+
+        </ng-container>
+
+    </owl-carousel-o>
+
+</section>
+
+
+<!-- =========================================================
+     SERVICES
+========================================================= -->
+
+<section class="services_info">
+
+    <div class="container-fluid">
+
+
+        <div class="small_maintext">
+
+            our services
+
+        </div>
+
+
+        <div class="main_text_hd">
+
+            Healthcare for every
+
+            <strong>
+                stage of life
+            </strong>
+
+        </div>
+
+
+
+        <div
+            class="row mt-md-5 mt-4"
+            *ngIf="
+                services &&
+                services.length
+            ">
+
+
+            <div
+                class="
+                    col-lg-3
+                    col-md-6
+                    col-sm-12
+                    col-12
+                    mb-4
+                "
+                *ngFor="
+                    let service
+                    of services.slice(0,4)
+                ">
+
+
+                <div
+    class="serv_itembox">
+
+
+    <!-- ICON -->
+
+    <div
+        class="serve_iconbox">
+
+        <i
+            [class]="service.icon">
+        </i>
+
+    </div>
+
+
+
+    <!-- TITLE -->
+
+    <div
+        class="sv_texthd">
+
+        {{service.title}}
+
+    </div>
+
+
+
+    <!-- DESCRIPTION -->
+
+    <div
+        class="sv_textpara">
+
+        {{service.short_description}}
+
+    </div>
+
+
+
+    <!-- LEARN MORE -->
+
+    <div
+        class="sv_btnbox mt-3">
+
+        <a
+            [routerLink]="[
+                '/services',
+                service.slug
+            ]"
+            class="service-read-more">
+
+            <span> Learn More </span><span class="service-read-more-icon"><i class="fa-solid fa-arrow-right"></i></span>
+
+        </a>
+
+    </div>
+
+
+</div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- =========================================================
+     ABOUT US
+========================================================= -->
+
+<section class="aboutus_info">
+
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="offset-lg-7 col-lg-5 col-md-6 col-sm-12 col-12">
+
+                <div class="aboutus_bgbox">
+
+                    <div class="main_text_hd text-light">
+                        Welcome to Medclinic Family Practice
+                    </div>
+
+
+                    <div class="scroll_text_box">
+
+                        <div class="main_text_para text-light scroll_text">
+
+                            Medclinic Family Practice is a medical practice
+                            in Brookvale, inside Priceline Pharmacy,
+                            Westfield Warringah Mall. Staff is dedicated
+                            to treating and caring for our clients with
+                            complete professionalism. New patients are
+                            always welcome, and staff are always happy
+                            to answer or further explain any queries.
+
+                            <br><br>
+
+                            We consider ourselves to be a part of the
+                            local community. We are a fully computerised
+                            medical practice in accordance to the latest
+                            RACGP standards and equipped with the latest
+                            equipment and technology. All our policies
+                            and procedures comply with RACGP standards,
+                            serving the communities of Brookvale,
+                            Dee Why, and Manly.
+
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        routerLink="/about-us"
+                        class="hd_contact hd_contact3">
+
+                        Learn More
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SUPPORT
+========================================================= -->
+
+<section class="support_info">
+
+    <div class="container">
+
+        <div class="row">
+
+
+            <div class="col-lg-3 col-md-6 col-sm-12 col-12 mb-4 sup_rtbd">
+
+                <div class="support_itembox">
+
+                    <div class="support_icon">
+
+                        <img
+                            src="assets/images/opening_icon.png"
+                            alt="Opening">
+
+                    </div>
+
+                    <div class="support_itemtext">
+
+                        <strong>
+                            6 Days
+                        </strong>
+
+                        Open Monday - Saturday
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-3 col-md-6 col-sm-12 col-12 mb-4 sup_rtbd">
+
+                <div class="support_itembox">
+
+                    <div class="support_icon">
+
+                        <img
+                            src="assets/images/medicare_svicon.png"
+                            alt="Medicare">
+
+                    </div>
+
+                    <div class="support_itemtext">
+
+                        <strong>
+                            Medicare
+                        </strong>
+
+                        Fully bulk billing
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-3 col-md-6 col-sm-12 col-12 mb-4 sup_rtbd">
+
+                <div class="support_itembox">
+
+                    <div class="support_icon">
+
+                        <img
+                            src="assets/images/allages_icon.png"
+                            alt="All Ages">
+
+                    </div>
+
+                    <div class="support_itemtext">
+
+                        <strong>
+                            All Ages
+                        </strong>
+
+                        Family Healthcare
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-3 col-md-6 col-sm-12 col-12 mb-4 sup_rtbd">
+
+                <div class="support_itembox">
+
+                    <div class="support_icon">
+
+                        <img
+                            src="assets/images/local_icon.png"
+                            alt="Local">
+
+                    </div>
+
+                    <div class="support_itemtext">
+
+                        <strong>
+                            Local
+                        </strong>
+
+                        Brookvale / Warringah Mall
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     WHY CHOOSE US
+========================================================= -->
+
+<section class="choose_info">
+
+    <div class="container-fluid">
+
+        <div class="texttop_box text-center">
+
+            <div class="main_text_hd">
+                Why Choose Us?
+            </div>
+
+            <div class="main_text_para">
+
+                We are a trusted choice for individuals and families.
+                Every doctor on our team brings years of experience
+                and a dedication to holistic healthcare. We improve
+                your overall quality of life. From general practice
+                to specialised care, our services ensure you receive
+                the best possible attention.
+
+            </div>
+
+        </div>
+
+
+        <div class="choose_owlbox">
+
+            <owl-carousel-o
+                [options]="chooseOptions">
+
+
+                <!-- 01 -->
+
+                <ng-template carouselSlide>
+
+                    <div class="choose_itembox">
+
+                        <div class="choose_itemtexthd">
+                            Comprehensive General Practice
+                        </div>
+
+                        <div class="scroll_text_box">
+
+                            <div class="choose_textpara scroll_text">
+
+                                Your health is our priority at Medclinic
+                                Family Practice. Our general practice
+                                services cover a wide range of medical
+                                needs. From diagnosing common illnesses
+                                to managing chronic conditions, our
+                                doctors are here to provide timely and
+                                accurate care. We also offer preventative
+                                health services, including routine
+                                check-ups, health screenings, and
+                                immunizations. Staying ahead of potential
+                                health issues is a key part of our
+                                approach. Every consultation is tailored
+                                to your specific needs, ensuring you feel
+                                confident and supported.
+
+                            </div>
+
+                        </div>
+
+                        <div class="choose_numb">
+                            01
+                        </div>
+
+                    </div>
+
+                </ng-template>
+
+
+                <!-- 02 -->
+
+                <ng-template carouselSlide>
+
+                    <div class="choose_itembox">
+
+                        <div class="choose_itemtexthd">
+                            A Commitment to the Community
+                        </div>
+
+                        <div class="scroll_text_box">
+
+                            <div class="choose_textpara scroll_text">
+
+                                We are more than a medical centre. We are
+                                part of the community. Our mission is to
+                                support the health and well-being of
+                                individuals and families, fostering a
+                                healthier, happier community. Every service
+                                we provide reflects our dedication to making
+                                healthcare accessible and effective for
+                                everyone.
+
+                            </div>
+
+                        </div>
+
+                        <div class="choose_numb">
+                            02
+                        </div>
+
+                    </div>
+
+                </ng-template>
+
+
+                <!-- 03 -->
+
+                <ng-template carouselSlide>
+
+                    <div class="choose_itembox">
+
+                        <div class="choose_itemtexthd">
+                            State-of-the-Art Facilities
+                        </div>
+
+                        <div class="scroll_text_box">
+
+                            <div class="choose_textpara scroll_text">
+
+                                Modern healthcare demands modern solutions.
+                                Medclinic Family Practice is equipped with
+                                advanced technology to ensure accurate
+                                diagnostics and efficient care. From
+                                streamlined patient record systems to
+                                cutting-edge diagnostic tools, every detail
+                                is designed with your comfort and safety in
+                                mind.
+
+                            </div>
+
+                        </div>
+
+                        <div class="choose_numb">
+                            03
+                        </div>
+
+                    </div>
+
+                </ng-template>
+
+
+                <!-- 04 -->
+
+                <ng-template carouselSlide>
+
+                    <div class="choose_itembox">
+
+                        <div class="choose_itemtexthd">
+                            A Doctor Who Cares
+                        </div>
+
+                        <div class="scroll_text_box">
+
+                            <div class="choose_textpara scroll_text">
+
+                                When you visit Medclinic Family Practice,
+                                you're meeting someone who listens. Every
+                                appointment is an opportunity to address
+                                your concerns and create a treatment plan
+                                that works for you. Our team is committed
+                                to understanding your unique situation and
+                                delivering care with respect and empathy.
+
+                            </div>
+
+                        </div>
+
+                        <div class="choose_numb">
+                            04
+                        </div>
+
+                    </div>
+
+                </ng-template>
+
+            </owl-carousel-o>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     TRUSTED PARTNER
+========================================================= -->
+
+<section class="trustedpart_info">
+
+    <div class="container-fluid">
+
+        <div class="row align-items-center">
+
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12 trusted_leftimg">
+
+                <img
+                    src="assets/images/trusted_leftimg.jpg"
+                    alt="Medclinic Family Practice">
+
+            </div>
+
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+
+                <div class="trusted_rightbox">
+
+                    <div class="main_text_hd">
+                        Your Trusted Partner in Healthcare
+                    </div>
+
+
+                    <div class="main_text_para">
+
+                        We always prioritise your health and well-being.
+                        Every visit to Medclinic Family Practice is
+                        designed to provide efficient, compassionate care
+                        tailored to your needs. Our commitment is simple:
+                        quality healthcare, accessible to everyone.
+                        Whether you're a new patient or a long-standing
+                        member of our community, we will exceed your
+                        expectations and deliver the quality care.
+
+                    </div>
+
+
+                    <a
+                        href="https://www.hotdoc.com.au/medical-centres/brookvale-NSW-2100/medclinic-family-practice/doctors?wp=w_lightbox"
+                        target="_blank"
+                        rel="noopener"
+                        class="hd_contact me-2">
+
+                        Book an Appointment
+
+                    </a>
+
+
+                    <a
+                        href="tel:0283196266"
+                        class="hd_contact hd_contact2 hd_rtarrow">
+
+                        02 8319 6266
+
+                        <img
+                            src="assets/images/arrow_btnhd.png"
+                            alt="">
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     OUR USP
+========================================================= -->
+
+<section class="ourusp_info">
+
+    <div class="container-fluid">
+
+        <div class="texttop_box text-center">
+
+            <div class="small_maintext">
+                Our usp
+            </div>
+
+            <div class="main_text_hd">
+                What Sets Us Apart
+            </div>
+
+        </div>
+
+
+        <div class="row">
+
+
+            <!-- LEFT -->
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12 mb-4">
+
+                <div class="ourusp_leftbox">
+
+
+                    <div class="ourusp_itembox">
+
+                        <div class="ourusp_icon">
+
+                            <img
+                                src="assets/images/accessiblelc_icon.png"
+                                alt="Accessible Location">
+
+                        </div>
+
+                        <div class="ourusp_textbox">
+
+                            <strong>
+                                Accessible Location
+                            </strong>
+
+                            Convenience matters. Medclinic Family Practice
+                            is centrally located, making it easy to visit us
+                            no matter where you're coming from. We are
+                            committed to being a reliable healthcare
+                            partner for the entire community.
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="ourusp_itembox ourusp_bdnone">
+
+                        <div class="ourusp_icon">
+
+                            <img
+                                src="assets/images/advtech_icon.png"
+                                alt="Advanced Technology">
+
+                        </div>
+
+                        <div class="ourusp_textbox">
+
+                            <strong>
+                                Advanced Technology, Human Touch
+                            </strong>
+
+                            Technology plays a crucial role in modern
+                            medicine. At Medclinic Family Practice, we use
+                            advanced tools to enhance diagnostics,
+                            treatment planning, and patient communication.
+                            However, we never lose sight of the human side
+                            of healthcare. Your comfort, trust, and
+                            well-being remain our top priorities.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT -->
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12 mb-4">
+
+                <div class="ourusp_rightbox">
+
+
+                    <div class="ourusp_itembox">
+
+                        <div class="ourusp_icon">
+
+                            <img
+                                src="assets/images/trustbuilt_icon.png"
+                                alt="Trust Built on Experience">
+
+                        </div>
+
+                        <div class="ourusp_textbox">
+
+                            <strong>
+                                Trust Built on Experience
+                            </strong>
+
+                            Our doctors bring a wealth of experience to
+                            every consultation. From addressing minor
+                            concerns to managing complex medical
+                            conditions, you can trust our team to provide
+                            expert care. We're here to guide you through
+                            your healthcare journey, ensuring you feel
+                            confident every step of the way.
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="ourusp_itembox ourusp_bdnone">
+
+                        <div class="ourusp_icon">
+
+                            <img
+                                src="assets/images/joinhelthfm_icon.png"
+                                alt="Join Our Healthcare Family">
+
+                        </div>
+
+                        <div class="ourusp_textbox">
+
+                            <strong>
+                                Join Our Healthcare Family
+                            </strong>
+
+                            We welcome new patients with open arms.
+                            Whether you're new to the area or simply
+                            looking for a reliable medical centre, we are
+                            here for you. Becoming a part of our
+                            healthcare family means gaining a partner who
+                            is invested in your long-term health.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     OUR DOCTORS
+========================================================= -->
+
+<section class="ourdoct_info">
+
+    <div class="container-fluid">
+
+        <div class="texttop_box text-center">
+
+            <div class="small_maintext">
+                Our Doctors
+            </div>
+
+            <div class="main_text_hd">
+                Meet the people behind your care
+            </div>
+
+        </div>
+
+
+        <div class="ourdoct_owlbox">
+
+
+    <owl-carousel-o
+        [options]="doctorOptions">
+
+
+        <ng-container
+            *ngFor="
+                let doctor of doctors
+            ">
+
+
+            <ng-template
+                carouselSlide>
+
+
+                <div
+                    class="ourdoct_itembox">
+
+
+                    <!-- IMAGE -->
+
+                    <div
+                        class="ourdoct_perimg">
+
+
+                        <img
+                            [src]="doctor.image"
+                            [alt]="doctor.name">
+
+
+                    </div>
+
+
+
+                    <!-- CONTENT -->
+
+                    <div
+                        class="ourdoct_textbox">
+
+
+
+                        <div
+                            class="ourdoct_texthd">
+
+                            {{doctor.name}}
+
+                        </div>
+
+
+
+                        <div
+                            class="ourdoct_textpara">
+
+                            {{doctor.qualification}}
+
+                        </div>
+
+
+
+                    </div>
+
+
+                </div>
+
+
+            </ng-template>
+
+
+        </ng-container>
+
+
+    </owl-carousel-o>
+
+
+</div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     APPOINTMENT
+========================================================= -->
+
+<section class="appoinment_info">
+
+    <div class="container-fluid">
+
+        <div class="row">
+
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12 appoinment_leftimg">
+
+                <img
+                    src="assets/images/appoinment_leftimg.jpg"
+                    alt="Book an appointment">
+
+            </div>
+
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+
+                <div class="appoinment_rightbox">
+
+                    <div class="main_text_hd">
+                        Ready to Make an Appointment?
+                    </div>
+
+
+                    <div class="main_text_para">
+
+                        Taking care of your health has never been
+                        easier. Call Medclinic Family Practice today
+                        or use our online booking system to schedule
+                        your appointment. We are open Monday to Friday
+                        and ready to assist with all your healthcare
+                        needs.
+
+                        <br><br>
+
+                        Experience the difference of a medical centre
+                        that puts your health and happiness first.
+                        Visit Medclinic Family Practice today and see
+                        why so many in the community trust us as their
+                        go-to healthcare provider.
+
+                    </div>
+
+
+                    <div class="appoinment_btnbox">
+
+                        <a
+                            href="https://www.hotdoc.com.au/medical-centres/brookvale-NSW-2100/medclinic-family-practice/doctors?wp=w_lightbox"
+                            target="_blank"
+                            rel="noopener"
+                            class="hd_contact me-2">
+
+                            Book an Appointment
+
+                        </a>
+
+
+                        <a
+                            href="tel:0283196266"
+                            class="hd_contact hd_rtarrow text-uppercase">
+
+                            02 8319 6266
+
+                            <img
+                                src="assets/images/arrow_btnhd.png"
+                                alt="">
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     TESTIMONIALS
+========================================================= -->
+
+<section class="testimonial_info">
+
+    <div class="container-fluid">
+
+        <div class="texttop_box text-center">
+
+            <div class="small_maintext">
+                Ratings 4.8 on 950 Google reviews
+            </div>
+
+            <div class="main_text_hd">
+                Trusted by our community
+            </div>
+
+        </div>
+
+
+        <!-- =========================================================
+     TESTIMONIAL CAROUSEL
+========================================================= -->
+
+<div class="testimonial_owlbox">
+
+
+    <!-- =====================================================
+         LOADING
+    ====================================================== -->
+
+    <div
+        class="testimonial-loading"
+        *ngIf="isTestimonialsLoading">
+
+        <div class="testimonial-loader"></div>
+
+        <p>
+            Loading testimonials...
+        </p>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         EMPTY
+    ====================================================== -->
+
+    <div
+        class="testimonial-empty"
+        *ngIf="
+            !isTestimonialsLoading &&
+            testimonials.length === 0
+        ">
+
+        <div class="testimonial-empty-icon">
+
+            <i
+                class="
+                    fa-solid
+                    fa-comment-medical
+                ">
+            </i>
+
+        </div>
+
+        <h3>
+            Testimonials coming soon
+        </h3>
+
+        <p>
+            We are currently updating our patient testimonials.
+        </p>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         CAROUSEL
+    ====================================================== -->
+
+    <owl-carousel-o
+        *ngIf="
+            !isTestimonialsLoading &&
+            testimonials.length > 0
+        "
+        [options]="testimonialOptions">
+
+
+        <ng-container
+            *ngFor="
+                let testimonial of testimonials;
+                trackBy: trackByTestimonialId
+            ">
+
+
+            <ng-template carouselSlide>
+
+
+                <div class="testimonial_itembox">
+
+
+                    <!-- =====================================
+                         QUOTE ICON
+                    ====================================== -->
+
+                    <div class="testimonial_quote_icon">
+
+                        <i
+                            class="
+                                fa-solid
+                                fa-quote-left
+                            ">
+                        </i>
+
+                    </div>
+
+
+
+                    <!-- =====================================
+                         REVIEW
+                    ====================================== -->
+
+                    <div class="scroll_text_box">
+
+
+                        <div
+                            class="
+                                testimonial_textpara
+                                scroll_text
+                            "
+                            [innerHTML]="
+                                testimonial.testimonial
+                            ">
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- =====================================
+                         CLIENT
+                    ====================================== -->
+
+                    <div class="testimonial_flexbox">
+
+
+                        <div class="tt_clientname">
+
+                            {{ testimonial.name }}
+
+                        </div>
+
+
+
+                        <!-- GOOGLE -->
+
+                        <div class="tt_googleicon">
+
+    <img
+        [src]="
+            testimonial?.image
+                ? testimonial.image
+                : 'assets/images/googlerev_icon.png'
+        "
+        [alt]="testimonial?.name || 'Google Review'"
+        loading="lazy">
+
+</div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </ng-template>
+
+
+        </ng-container>
+
+
+    </owl-carousel-o>
+
+
+</div>
+
+    </div>
+
+</section>

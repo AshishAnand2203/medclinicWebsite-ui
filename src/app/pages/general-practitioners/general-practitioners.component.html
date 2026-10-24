@@ -1,0 +1,465 @@
+<!-- =========================================================
+     INNER PAGE HEADER
+========================================================= -->
+
+<app-inner-page-header
+    [title]="category?.name || 'General Practitioners'">
+</app-inner-page-header>
+
+
+<!-- =========================================================
+     LOADING
+========================================================= -->
+
+<section
+    class="common-page-state"
+    *ngIf="isLoading">
+
+    <div class="container">
+
+        <div class="common-page-loading">
+
+            <span class="common-page-loader"></span>
+
+            <span class="common-page-loading-text">
+                Loading...
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ERROR
+========================================================= -->
+
+<section
+    class="gp-state-section"
+    *ngIf="!isLoading && errorMessage">
+
+    <div class="container">
+
+        <div class="gp-error">
+
+            <div class="gp-error-icon">
+                <i class="fa-solid fa-circle-exclamation"></i>
+            </div>
+
+            <h3>Unable to Load Doctors</h3>
+
+            <p>{{ errorMessage }}</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PAGE
+========================================================= -->
+
+<main
+    class="gp-page"
+    *ngIf="!isLoading && !errorMessage">
+
+
+    <!-- =====================================================
+         INTRODUCTION
+    ====================================================== -->
+
+    <section class="gp-intro-section">
+
+        <div class="container">
+
+            <div class="gp-intro">
+
+                <!-- LEFT -->
+
+                <div class="gp-intro-left">
+
+                    <div class="gp-section-label">
+
+                        <span class="gp-label-line"></span>
+
+                        <span>
+                            Meet Our Medical Team
+                        </span>
+
+                    </div>
+
+
+                    <h1>
+
+                        Experienced care from our
+
+                        <strong>
+                            {{
+                                category?.name ||
+                                'General Practitioners'
+                            }}
+                        </strong>
+
+                    </h1>
+
+                </div>
+
+
+                <!-- RIGHT -->
+
+                <div
+                    class="gp-intro-right"
+                    *ngIf="page?.content">
+
+                    <div class="gp-intro-icon">
+
+                        <i class="fa-solid fa-stethoscope"></i>
+
+                    </div>
+
+                    <div
+                        class="intro_text"
+                        [innerHTML]="page?.content">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         DOCTORS
+    ====================================================== -->
+
+    <section class="gp-doctors-section">
+
+        <div class="container">
+
+
+            <!-- =================================================
+                 DOCTOR CARD
+            ================================================== -->
+
+            <article
+                class="gp-doctor-card"
+                *ngFor="let doctor of doctors">
+
+
+                <!-- ==========================================
+                     LEFT PROFILE
+                =========================================== -->
+
+                <div class="gp-profile-side">
+
+
+                    <!-- IMAGE -->
+
+                    <div class="gp-profile-image">
+
+                        <img
+                            [src]="getDoctorImage(doctor)"
+                            [alt]="doctor.name">
+
+
+                        <div class="gp-image-overlay"></div>
+
+
+                        <div class="gp-image-badge">
+
+                            <i class="fa-solid fa-user-doctor"></i>
+
+                            <span>
+                                {{
+                                    category?.name ||
+                                    'General Practitioners'
+                                }}
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- LANGUAGE -->
+
+                    <div
+                        class="gp-profile-language"
+                        *ngIf="doctor.languages">
+
+                        <div class="gp-language-icon">
+
+                            <i class="fa-solid fa-language"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Languages Spoken
+                            </span>
+
+                            <strong>
+                                {{ doctor.languages }}
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CARE MESSAGE -->
+
+                    <div class="gp-care-note">
+
+                        <i class="fa-solid fa-heart-pulse"></i>
+
+                        <div>
+
+                            <span>
+                                Patient Care
+                            </span>
+
+                            <strong>
+                                Professional & Personal
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==========================================
+                     RIGHT CONTENT
+                =========================================== -->
+
+                <div class="gp-profile-main">
+
+
+                    <!-- PROFILE HEADING -->
+
+                    <div class="gp-profile-heading">
+
+                        <div class="gp-heading-content">
+
+                            <div class="gp-profile-eyebrow">
+
+                                <span></span>
+
+                                Meet your doctor
+
+                            </div>
+
+
+                            <h2>
+                                {{ doctor.name }}
+                            </h2>
+
+
+                            <p
+                                class="gp-profile-qualification"
+                                *ngIf="doctor.qualification">
+
+                                {{ doctor.qualification }}
+
+                            </p>
+
+                        </div>
+
+
+                        <div class="gp-medical-symbol">
+
+                            <i class="fa-solid fa-stethoscope"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DIVIDER -->
+
+                    <div class="gp-profile-divider"></div>
+
+
+                    <!-- SHORT DESCRIPTION -->
+
+                    <p
+                        class="gp-profile-summary"
+                        *ngIf="doctor.short_description">
+
+                        {{ doctor.short_description }}
+
+                    </p>
+
+
+                    <!-- ======================================
+                         SPECIAL INTERESTS
+                    ======================================= -->
+
+                    <div
+                        class="gp-interest-section"
+                        *ngIf="
+                            doctor.interests &&
+                            doctor.interests.length
+                        ">
+
+                        <div class="gp-interest-title">
+
+                            <span class="gp-interest-title-icon">
+
+                                <i class="fa-solid fa-heart-pulse"></i>
+
+                            </span>
+
+                            <div>
+
+                                <span>Clinical Focus</span>
+
+                                <strong>
+                                    Special Interests
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="gp-interest-chips">
+
+                            <span
+                                class="gp-interest-chip"
+                                *ngFor="let interest of doctor.interests">
+
+                                <i class="fa-solid fa-check"></i>
+
+                                {{ interest.title }}
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ======================================
+                         CMS DOCTOR CONTENT
+                    ======================================= -->
+
+                    <div
+                        class="gp-doctor-content"
+                        *ngIf="doctor.content"
+                        [innerHTML]="doctor.content">
+                    </div>
+
+
+                    <!-- ======================================
+                         ACTIONS
+                    ======================================= -->
+
+                    <div class="gp-profile-actions">
+
+
+                        <!-- BOOK -->
+
+                        <a
+                            *ngIf="settings?.appointment_url"
+                            [href]="settings.appointment_url"
+                            target="_blank"
+                            rel="noopener"
+                            class="gp-primary-action">
+
+                            <span class="gp-action-icon">
+
+                                <i class="fa-regular fa-calendar-check"></i>
+
+                            </span>
+
+                            <span class="gp-action-text">
+
+                                <small>
+                                    Schedule your visit
+                                </small>
+
+                                <strong>
+                                    Book Appointment
+                                </strong>
+
+                            </span>
+
+                            <i class="fa-solid fa-arrow-right gp-action-arrow"></i>
+
+                        </a>
+
+
+                        <!-- PHONE -->
+
+                        <a
+                            *ngIf="settings?.contact_phone"
+                            [href]="'tel:' + settings.contact_phone"
+                            class="gp-call-action">
+
+                            <span class="gp-call-icon">
+
+                                <i class="fa-solid fa-phone"></i>
+
+                            </span>
+
+                            <span>
+
+                                <small>
+                                    Call the practice
+                                </small>
+
+                                <strong>
+                                    {{ settings.contact_phone }}
+                                </strong>
+
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 EMPTY
+            ================================================== -->
+
+            <div
+                class="gp-empty"
+                *ngIf="doctors.length === 0">
+
+                <div class="gp-empty-icon">
+
+                    <i class="fa-solid fa-user-doctor"></i>
+
+                </div>
+
+                <h3>
+                    No doctors available
+                </h3>
+
+                <p>
+                    Doctor information is currently unavailable.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>

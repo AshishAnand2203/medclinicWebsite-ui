@@ -1,0 +1,1009 @@
+<header
+    class="navber1 navbar-default fixed-top"
+    [class.navbar-shrink]="isScrolled">
+
+    <!-- =====================================================
+         TOP BAR
+    ====================================================== -->
+
+    <div class="header_topbg">
+
+        <div class="container">
+
+            <div class="header_toptext">
+
+                <!-- OPENING HOURS -->
+
+                <span
+                    class="topbar-item"
+                    *ngIf="settings?.opening_hours">
+
+                    {{ settings.opening_hours }}
+
+                </span>
+
+
+                <!-- SEPARATOR -->
+
+                <strong
+                    class="topbar-dot"
+                    *ngIf="
+                        settings?.opening_hours &&
+                        settings?.address
+                    ">
+
+                    &#9679;
+
+                </strong>
+
+
+                <!-- ADDRESS -->
+
+                <span
+                    class="topbar-item"
+                    *ngIf="settings?.address">
+
+                    {{ settings.address }}
+
+                </span>
+
+
+                <!-- SEPARATOR -->
+
+                <strong
+                    class="topbar-dot"
+                    *ngIf="
+                        settings?.address &&
+                        settings?.contact_phone
+                    ">
+
+                    &#9679;
+
+                </strong>
+
+
+                <!-- PHONE -->
+
+                <span
+                    class="topbar-item"
+                    *ngIf="settings?.contact_phone">
+
+                    Call us :
+
+                    <a
+                        [href]="getPhoneLink(
+                            settings.contact_phone
+                        )">
+
+                        {{ settings.contact_phone }}
+
+                    </a>
+
+                </span>
+
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         MAIN HEADER
+    ====================================================== -->
+
+    <div class="header_btmbg">
+
+        <div class="container-fluid">
+
+            <div class="row align-items-center">
+
+
+                <!-- =================================================
+                     LOGO
+                ================================================== -->
+
+                <div
+                    class="
+                        col-lg-2
+                        col-md-5
+                        col-sm-5
+                        col-5
+                        header_logo
+                    ">
+
+                    <a routerLink="/">
+
+                        <img
+                            src="assets/images/logo.png"
+                            alt="Medclinic Family Practice">
+
+                    </a>
+
+                </div>
+
+
+                <!-- =================================================
+                     MOBILE MENU BUTTON
+                ================================================== -->
+
+                <div
+                    class="
+                        col-md-7
+                        col-7
+                        header_ham
+                        d-lg-none
+                        text-end
+                    ">
+
+                    <a
+                        href="javascript:void(0)"
+                        class="header_ham_icon"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasRight"
+                        aria-controls="offcanvasRight">
+                    </a>
+
+                </div>
+
+
+                <!-- =================================================
+                     DESKTOP NAVIGATION
+                ================================================== -->
+
+                <div
+                    class="
+                        col-lg-6
+                        col-md-6
+                        col-sm-12
+                        header_topnav
+                        text-center
+                        p-0
+                    ">
+
+                    <div class="header_nav">
+
+                        <ul>
+
+                            <!-- HOME -->
+
+                            <li
+                                routerLinkActive="active"
+                                [routerLinkActiveOptions]="{
+                                    exact: true
+                                }">
+
+                                <a routerLink="/">
+                                    Home
+                                </a>
+
+                            </li>
+
+
+                            <!-- ABOUT -->
+
+                            <li
+                                routerLinkActive="active">
+
+                                <a routerLink="/about-us">
+                                    About Us
+                                </a>
+
+                            </li>
+
+
+                            <!-- =================================================
+                                 SERVICES
+                            ================================================== -->
+
+                            <li
+                                class="services-nav-item"
+                                routerLinkActive="active">
+
+                                <a
+                                    routerLink="/services"
+                                    class="services-nav-link">
+
+                                    <span>
+                                        Services
+                                    </span>
+
+                                    <i
+                                        class="
+                                            fa-solid
+                                            fa-chevron-down
+                                        ">
+                                    </i>
+
+                                </a>
+
+
+                                <!-- SERVICES DROPDOWN -->
+
+                                <!-- SERVICES DROPDOWN -->
+
+<div
+    class="services-dropdown"
+    *ngIf="
+        services &&
+        services.length > 0
+    ">
+
+    <div
+        class="
+            services-dropdown-box
+        ">
+
+        <!-- HEADING -->
+
+        <div
+            class="
+                services-dropdown-heading
+            ">
+
+            Our Services
+
+        </div>
+
+
+        <!-- ================================================
+             MAIN SERVICES
+        ================================================= -->
+
+        <div
+            class="services-dropdown-item"
+            *ngFor="
+                let service
+                of services
+            ">
+
+
+            <!-- MAIN SERVICE -->
+
+            <a
+                [routerLink]="[
+                    '/services',
+                    service.slug
+                ]"
+                class="
+                    services-dropdown-link
+                ">
+
+
+                <span
+                    class="
+                        services-dropdown-icon
+                    ">
+
+                    <i
+                        class="
+                            fa-solid
+                            fa-angle-right
+                        ">
+                    </i>
+
+                </span>
+
+
+                <span
+                    class="
+                        services-dropdown-title
+                    ">
+
+                    {{ service.title }}
+
+                </span>
+
+
+                <!-- CHILD INDICATOR -->
+
+                <i
+                    *ngIf="
+                        service.subServices &&
+                        service.subServices.length > 0
+                    "
+                    class="
+                        fa-solid
+                        fa-chevron-right
+                        services-dropdown-child-arrow
+                    ">
+                </i>
+
+            </a>
+
+
+            <!-- ============================================
+                 SUB SERVICES FLYOUT
+            ============================================= -->
+
+            <div
+                class="services-submenu"
+                *ngIf="
+                    service.subServices &&
+                    service.subServices.length > 0
+                ">
+
+                <div
+                    class="
+                        services-submenu-box
+                    ">
+
+
+                    <!-- SUBMENU HEADING -->
+
+                    <div
+                        class="
+                            services-submenu-heading
+                        ">
+
+                        {{ service.title }}
+
+                    </div>
+
+
+                    <!-- SUB SERVICES -->
+
+                    <a
+                        *ngFor="
+                            let subService
+                            of service.subServices
+                        "
+                        [routerLink]="[
+                            '/services',
+                            subService.slug
+                        ]"
+                        class="
+                            services-submenu-link
+                        ">
+
+
+                        <span
+                            class="
+                                services-submenu-icon
+                            ">
+
+                            <i
+                                class="
+                                    fa-solid
+                                    fa-angle-right
+                                ">
+                            </i>
+
+                        </span>
+
+
+                        <span>
+
+                            {{ subService.title }}
+
+                        </span>
+
+                    </a>
+
+
+                    <!-- VIEW PARENT SERVICE -->
+
+                    <div
+                        class="
+                            services-submenu-footer
+                        ">
+
+                        <a
+                            [routerLink]="[
+                                '/services',
+                                service.slug
+                            ]">
+
+                            <span>
+                                View {{ service.title }}
+                            </span>
+
+                            <i
+                                class="
+                                    fa-solid
+                                    fa-arrow-right
+                                ">
+                            </i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================================================
+             VIEW ALL
+        ================================================= -->
+
+        <div
+            class="
+                services-dropdown-footer
+            ">
+
+            <a routerLink="/services">
+
+                <span>
+                    View All Services
+                </span>
+
+                <i
+                    class="
+                        fa-solid
+                        fa-arrow-right
+                    ">
+                </i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+                            </li>
+
+
+                            <!-- DOCTORS -->
+
+                            <!-- =========================================================
+     DOCTORS
+========================================================= -->
+
+<li
+    class="services-nav-item"
+    routerLinkActive="active">
+
+    <a
+        routerLink="/doctors"
+        class="services-nav-link">
+
+        <span>
+            Doctors
+        </span>
+
+        <i
+            class="
+                fa-solid
+                fa-chevron-down
+            ">
+        </i>
+
+    </a>
+
+
+    <!-- =====================================================
+         DOCTORS DROPDOWN
+    ====================================================== -->
+
+    <div class="services-dropdown">
+
+        <div class="services-dropdown-box">
+
+            <!-- HEADING -->
+
+            <div class="services-dropdown-heading">
+                Our Doctors
+            </div>
+
+
+            <!-- GENERAL PRACTITIONERS -->
+
+            <a
+                routerLink="/general-practitioners"
+                routerLinkActive="active"
+                class="services-dropdown-link">
+
+                <span class="services-dropdown-icon">
+
+                    <i
+                        class="
+                            fa-solid
+                            fa-angle-right
+                        ">
+                    </i>
+
+                </span>
+
+
+                <span class="services-dropdown-title">
+                    General Practitioners
+                </span>
+
+            </a>
+
+
+            <!-- VIEW ALL DOCTORS -->
+
+            <div class="services-dropdown-footer">
+
+                <a routerLink="/general-practitioners">
+
+                    <span>
+                        View All Doctors
+                    </span>
+
+                    <i
+                        class="
+                            fa-solid
+                            fa-arrow-right
+                        ">
+                    </i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</li>
+
+
+                            <!-- PHARMACY -->
+
+                            <li
+                                routerLinkActive="active">
+
+                                <a routerLink="/pharmacy-medical-centre-warringah-mall-brookvale">
+                                    Pharmacy
+                                </a>
+
+                            </li>
+
+
+                            <!-- CONTACT -->
+
+                            <li
+                                routerLinkActive="active">
+
+                                <a routerLink="/contact-us">
+                                    Contact Us
+                                </a>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     RIGHT CONTACT
+                ================================================== -->
+
+                <div
+                    class="
+                        col-lg-4
+                        col-md-4
+                        col-sm-12
+                        hd_callflex
+                        text-end
+                        ps-0
+                    ">
+
+
+                    <!-- PHONE -->
+
+                    <a
+                        *ngIf="settings?.contact_phone"
+                        [href]="getPhoneLink(
+                            settings.contact_phone
+                        )"
+                        class="hd_callicon">
+
+                        <img
+                            src="assets/images/callicon_hd.png"
+                            alt="Call">
+
+                        {{ settings.contact_phone }}
+
+                    </a>
+
+
+                    <!-- BOOK APPOINTMENT -->
+
+                    <a
+                        *ngIf="settings?.appointment_url"
+                        [href]="settings.appointment_url"
+                        target="_blank"
+                        rel="noopener"
+                        class="
+                            hd_contact
+                            hd_rtarrow
+                            text-uppercase
+                        ">
+
+                        Book an Appointment
+
+                        <img
+                            src="assets/images/arrow_btnhd.png"
+                            alt="">
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     MOBILE OFFCANVAS
+========================================================= -->
+
+<div
+    class="offcanvas offcanvas-end"
+    tabindex="-1"
+    id="offcanvasRight"
+    aria-labelledby="offcanvasRightLabel">
+
+
+    <!-- =====================================================
+         MOBILE HEADER
+    ====================================================== -->
+
+    <div class="offcanvas-header">
+
+        <div
+            class="offcanvas-title"
+            id="offcanvasRightLabel">
+
+            <a
+                routerLink="/"
+                class="res_logo"
+                data-bs-dismiss="offcanvas">
+
+                <img
+                    src="assets/images/logo.png"
+                    alt="Medclinic Family Practice">
+
+            </a>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close">
+        </button>
+
+    </div>
+
+
+    <!-- =====================================================
+         MOBILE BODY
+    ====================================================== -->
+
+    <div class="offcanvas-body">
+
+
+        <!-- =================================================
+             QUICK LINKS
+        ================================================== -->
+
+        <div class="offcanvas_menu_heading">
+            Quick Links
+        </div>
+
+
+        <div
+            class="
+                header_nav
+                mobile-header-nav
+            ">
+
+            <ul>
+
+                <!-- HOME -->
+
+                <li>
+
+                    <a
+                        routerLink="/"
+                        routerLinkActive="active"
+                        [routerLinkActiveOptions]="{
+                            exact: true
+                        }"
+                        data-bs-dismiss="offcanvas">
+
+                        Home
+
+                    </a>
+
+                </li>
+
+
+                <!-- ABOUT -->
+
+                <li>
+
+                    <a
+                        routerLink="/about-us"
+                        routerLinkActive="active"
+                        data-bs-dismiss="offcanvas">
+
+                        About Us
+
+                    </a>
+
+                </li>
+
+
+                <!-- SERVICES -->
+
+                <li>
+
+                    <a
+                        routerLink="/services"
+                        routerLinkActive="active"
+                        data-bs-dismiss="offcanvas">
+
+                        Services
+
+                    </a>
+
+                </li>
+
+
+                <!-- DOCTORS -->
+
+                <li>
+
+                    <a
+                        routerLink="/doctors"
+                        routerLinkActive="active"
+                        data-bs-dismiss="offcanvas">
+
+                        Doctors
+
+                    </a>
+
+                </li>
+
+
+                <!-- PHARMACY -->
+
+                <li>
+
+                    <a
+                        routerLink="/pharmacy-medical-centre-warringah-mall-brookvale"
+                        routerLinkActive="active"
+                        data-bs-dismiss="offcanvas">
+
+                        Pharmacy
+
+                    </a>
+
+                </li>
+
+
+                <!-- CONTACT -->
+
+                <li>
+
+                    <a
+                        routerLink="/contact-us"
+                        routerLinkActive="active"
+                        data-bs-dismiss="offcanvas">
+
+                        Contact Us
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- =================================================
+             DYNAMIC SERVICES
+        ================================================== -->
+
+        <ng-container
+            *ngIf="
+                services &&
+                services.length > 0
+            ">
+
+            <div class="offcanvas_menu_heading">
+                Services
+            </div>
+
+
+            <div
+                class="
+                    header_nav
+                    mobile-service-nav
+                ">
+
+                <ul>
+
+                    <li
+                        *ngFor="
+                            let service
+                            of services
+                        ">
+
+                        <a
+                            [routerLink]="[
+                                '/services',
+                                service.slug
+                            ]"
+                            routerLinkActive="active"
+                            data-bs-dismiss="offcanvas">
+
+                            <span
+                                class="
+                                    mobile-service-arrow
+                                ">
+
+                                <i
+                                    class="
+                                        fa-solid
+                                        fa-angle-right
+                                    ">
+                                </i>
+
+                            </span>
+
+
+                            <span>
+                                {{ service.title }}
+                            </span>
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </ng-container>
+
+
+        <!-- =================================================
+             CONTACT INFORMATION
+        ================================================== -->
+
+        <div
+            class="mobile-header-contact"
+            *ngIf="
+                settings?.contact_phone ||
+                settings?.contact_email ||
+                settings?.address
+            ">
+
+
+            <!-- PHONE -->
+
+            <a
+                *ngIf="settings?.contact_phone"
+                [href]="getPhoneLink(
+                    settings.contact_phone
+                )">
+
+                <span
+                    class="
+                        mobile-contact-icon
+                    ">
+
+                    <i
+                        class="
+                            fa-solid
+                            fa-phone
+                        ">
+                    </i>
+
+                </span>
+
+
+                <span>
+                    {{ settings.contact_phone }}
+                </span>
+
+            </a>
+
+
+            <!-- EMAIL -->
+
+            <a
+                *ngIf="settings?.contact_email"
+                [href]="getEmailLink(
+                    settings.contact_email
+                )">
+
+                <span
+                    class="
+                        mobile-contact-icon
+                    ">
+
+                    <i
+                        class="
+                            fa-solid
+                            fa-envelope
+                        ">
+                    </i>
+
+                </span>
+
+
+                <span>
+                    {{ settings.contact_email }}
+                </span>
+
+            </a>
+
+
+            <!-- ADDRESS -->
+
+            <div
+                *ngIf="settings?.address">
+
+                <span
+                    class="
+                        mobile-contact-icon
+                    ">
+
+                    <i
+                        class="
+                            fa-solid
+                            fa-location-dot
+                        ">
+                    </i>
+
+                </span>
+
+
+                <span>
+                    {{ settings.address }}
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             BOOK APPOINTMENT
+        ================================================== -->
+
+        <a
+            *ngIf="settings?.appointment_url"
+            [href]="settings.appointment_url"
+            target="_blank"
+            rel="noopener"
+            class="
+                hd_contact
+                button_mbch
+            ">
+
+            Book an Appointment
+
+        </a>
+
+    </div>
+
+</div>

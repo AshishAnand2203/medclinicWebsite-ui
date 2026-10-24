@@ -1,0 +1,327 @@
+<!-- =========================================================
+     COMMON INNER PAGE HEADER
+========================================================= -->
+
+<app-inner-page-header
+    [title]="page?.title || 'Our Services'">
+</app-inner-page-header>
+
+
+<!-- =========================================================
+     LOADING
+========================================================= -->
+
+<section
+    class="common-page-state"
+    *ngIf="isLoading">
+
+    <div class="container">
+
+        <div class="common-page-loading">
+
+            <span class="common-page-loader"></span>
+
+            <span class="common-page-loading-text">
+                Loading...
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ERROR
+========================================================= -->
+
+<section
+    class="services-page-state"
+    *ngIf="
+        !isLoading &&
+        hasError
+    ">
+
+    <div class="container">
+
+        <div class="services-message">
+
+            <div class="services-message-icon">
+
+                <i
+                    class="
+                        fa-solid
+                        fa-circle-exclamation
+                    ">
+                </i>
+
+            </div>
+
+            <h3>
+                Unable to load services
+            </h3>
+
+            <p>
+                {{
+                    errorMessage ||
+                    'We could not load our services at the moment.'
+                }}
+            </p>
+
+            <button
+                type="button"
+                (click)="loadServices()">
+
+                Try Again
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PAGE
+========================================================= -->
+
+<ng-container
+    *ngIf="
+        !isLoading &&
+        !hasError &&
+        page
+    ">
+
+
+    <!-- =====================================================
+         CMS PAGE CONTENT
+    ====================================================== -->
+
+    <section
+        class="services-cms-section"
+        *ngIf="
+            page.content ||
+            page.short_description
+        ">
+
+        <div class="container">
+
+
+            <!-- =================================================
+                 INTRO
+            ================================================== -->
+
+            <div
+                class="services-heading"
+                *ngIf="page.short_description">
+
+                <div class="services-heading-left">
+
+                    <span class="section-eyebrow">
+
+                        <span></span>
+
+                        Healthcare Services
+
+                    </span>
+
+                    <h2>
+                        {{ page.title }}
+                    </h2>
+
+                </div>
+
+
+                <div class="services-heading-right">
+
+                    <p>
+                        {{ page.short_description }}
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 DYNAMIC CMS CONTENT
+            ================================================== -->
+
+            <div
+                class="services-cms-content"
+                *ngIf="page.content">
+
+                <div
+                    class="cms-content"
+                    [innerHTML]="page.content">
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SERVICES LIST
+    ====================================================== -->
+
+    <section class="premium-services-section">
+
+    <div class="container">
+
+
+        <div class="premium-services-grid">
+
+
+            <article
+                class="premium-service-card"
+
+                *ngFor="
+                    let service of services;
+                    let i=index;
+                    trackBy: trackByServiceId
+                ">
+
+
+                <!-- BACKGROUND IMAGE -->
+
+                <!-- <img
+                    class="premium-service-image"
+
+                    [src]="getServiceImage(service)"
+
+                    [alt]="service.title"> -->
+
+                    <!-- <img
+                    class="premium-service-image"
+
+                    src="assets/images/bg.png"
+
+                    [alt]="service.title"> -->
+
+
+
+
+
+                <!-- OVERLAY -->
+
+                <div
+                    class="premium-service-overlay">
+                </div>
+
+
+
+
+
+                <!-- ICON -->
+
+                <div
+                    class="premium-service-icon">
+
+
+                    <i
+                        [class]="
+                        service.icon ||
+                        'fa-solid fa-stethoscope'
+                        ">
+                    </i>
+
+
+                </div>
+
+
+
+
+
+
+                <!-- CONTENT -->
+
+
+                <div
+                    class="premium-service-content">
+
+
+                    <h3>
+
+                        {{service.title}}
+
+                    </h3>
+
+                    <div class="medical-card-line">
+                <span></span>
+            </div>
+
+
+                    <p>
+
+                        {{
+                        service.short_description
+                        | slice:0:120
+                        }}
+
+                        <span
+                        *ngIf="
+                        service.short_description?.length > 120
+                        ">
+                            ...
+                        </span>
+
+                    </p>
+
+
+                     <a
+            [routerLink]="[
+                '/services',
+                service.slug
+            ]"
+            class="service-read-more">
+
+            <span> Learn More </span><span class="service-read-more-icon"><i class="fa-solid fa-arrow-right"></i></span>
+
+        </a>
+
+
+
+
+
+                </div>
+
+
+
+
+
+                <!-- DECORATION -->
+
+                <div
+                    class="premium-service-wave">
+                </div>
+
+
+
+
+
+            </article>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+    <!-- =====================================================
+         APPOINTMENT CTA
+    ====================================================== -->
+
+    <app-appointment-cta>
+    </app-appointment-cta>
+
+</ng-container>

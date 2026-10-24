@@ -1,0 +1,108 @@
+<app-inner-page-header
+    *ngIf="page"
+    [title]="page.title || 'Privacy Policy'">
+</app-inner-page-header>
+
+
+<section
+    class="common-page-state"
+    *ngIf="isLoading">
+
+    <div class="container">
+
+        <div class="common-page-loading">
+
+            <span class="common-page-loader"></span>
+
+            <span class="common-page-loading-text">
+                Loading...
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section
+    class="privacy-page-state"
+    *ngIf="!isLoading && errorMessage">
+
+    <div class="container">
+
+        <div class="privacy-error">
+
+            <i class="fa-solid fa-circle-exclamation"></i>
+
+            <p>
+                {{ errorMessage }}
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<main
+    class="privacy-page"
+    *ngIf="
+        !isLoading &&
+        !errorMessage &&
+        page
+    ">
+
+    <section class="privacy-content-section">
+
+        <div class="container">
+
+            <div class="privacy-layout">
+
+                <aside class="privacy-side">
+
+                    <div class="privacy-side-icon">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                    </div>
+
+                    <span>
+                        Patient Privacy
+                    </span>
+
+                    <h2>
+                        Your information matters.
+                    </h2>
+
+                    <p>
+                        Please read our policy to understand
+                        how personal information is handled
+                        by the practice.
+                    </p>
+
+                    <div class="privacy-side-accent">
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                </aside>
+
+
+                <div class="privacy-document">
+
+                    <div
+                        class="privacy-cms-content"
+                        [innerHTML]="page.content">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>

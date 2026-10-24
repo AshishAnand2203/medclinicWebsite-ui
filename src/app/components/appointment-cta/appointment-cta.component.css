@@ -1,0 +1,644 @@
+/* =========================================================
+   PREMIUM APPOINTMENT CTA
+========================================================= */
+.appointment-cta {
+  position: relative;
+  width: 100%;
+  padding: 78px 0;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 12% 20%,
+      rgba(37, 153, 221, 0.26) 0,
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(151, 201, 84, 0.12) 0,
+      transparent 30%
+    ),
+    linear-gradient(120deg, #034b7b 0%, #066ba9 45%, #0772ba 100%);
+  isolation: isolate;
+}
+/* subtle texture */
+.appointment-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.13;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 55px 55px;
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), transparent 80%);
+}
+/* top highlight */
+.appointment-cta::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+}
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+.appointment-cta .container {
+  position: relative;
+  z-index: 5;
+}
+/* =========================================================
+   LAYOUT
+========================================================= */
+.cta-layout {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.25fr)
+    minmax(360px, 0.75fr);
+  align-items: center;
+  gap: 90px;
+}
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+.cta-content {
+  position: relative;
+  max-width: 720px;
+  animation: ctaContentIn 0.7s ease-out both;
+}
+@keyframes ctaContentIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* =========================================================
+   EYEBROW
+========================================================= */
+.cta-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.eyebrow-line {
+  display: block;
+  width: 34px;
+  height: 3px;
+  background: #97c954;
+  border-radius: 20px;
+}
+.eyebrow-text {
+  color: #bde18e;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 2px;
+}
+/* =========================================================
+   MAIN HEADING
+========================================================= */
+.cta-content h2 {
+  max-width: 680px;
+  margin: 0 0 19px;
+  color: #ffffff;
+  font-size: 43px;
+  font-weight: 700;
+  line-height: 1.16;
+  letter-spacing: -0.8px;
+}
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+.cta-content > p {
+  max-width: 640px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.8;
+}
+/* =========================================================
+   TRUST POINTS
+========================================================= */
+.cta-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 25px;
+  margin-top: 29px;
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 14px;
+  font-weight: 500;
+}
+.trust-check {
+  width: 21px;
+  height: 21px;
+  flex: 0 0 21px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #17320d;
+  background: #97c954;
+  border-radius: 50%;
+  font-size: 15px;
+  font-weight: 800;
+}
+/* =========================================================
+   ACTION CARD
+========================================================= */
+.cta-actions-wrap {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  animation: ctaCardIn 0.8s 0.12s ease-out both;
+}
+@keyframes ctaCardIn {
+  from {
+    opacity: 0;
+    transform: translateX(25px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+.cta-action-card {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  padding: 31px 32px;
+  background: rgba(255, 255, 255, 0.97);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+  box-shadow: 0 25px 65px rgba(0, 38, 66, 0.25);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.cta-action-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 32px 75px rgba(0, 38, 66, 0.3);
+}
+/* green top detail */
+.cta-action-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 32px;
+  width: 55px;
+  height: 4px;
+  background: #97c954;
+  border-radius: 0 0 5px 5px;
+}
+/* =========================================================
+   ACTION CARD TEXT
+========================================================= */
+.action-label {
+  margin-bottom: 8px;
+  color: #0772ba;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+}
+.cta-action-card h3 {
+  margin: 0 0 7px;
+  color: #17232c;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.cta-action-card > p {
+  margin: 0 0 21px;
+  color: #77818a;
+  font-size: 13px;
+  line-height: 1.6;
+}
+/* =========================================================
+   BOOK BUTTON
+========================================================= */
+.book-button {
+  position: relative;
+  width: 100%;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 0 9px 0 20px;
+  color: #ffffff;
+  background: linear-gradient(100deg, #076aaa, #0781c8);
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 700;
+  box-shadow: 0 10px 25px rgba(7, 114, 186, 0.2);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+/* moving shine */
+.book-button::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -80%;
+  width: 45%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.22),
+    transparent
+  );
+  transform: rotate(20deg);
+  transition: left 0.7s ease;
+}
+.book-button:hover::before {
+  left: 135%;
+}
+.book-button:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(7, 114, 186, 0.28);
+}
+/* arrow box */
+.book-arrow {
+  position: relative;
+  z-index: 2;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 6px;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+.book-button:hover .book-arrow {
+  background: rgba(255, 255, 255, 0.22);
+  transform: translateX(2px);
+}
+.book-arrow svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+/* =========================================================
+   DIVIDER
+========================================================= */
+.action-divider {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin: 17px 0;
+}
+.action-divider span {
+  flex: 1;
+  height: 1px;
+  background: #e8ecef;
+}
+.action-divider small {
+  color: #a0a8ae;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  white-space: nowrap;
+}
+/* =========================================================
+   PHONE BUTTON
+========================================================= */
+.phone-button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 3px 2px;
+  color: #17232c;
+  text-decoration: none;
+}
+.phone-button:hover {
+  color: #0772ba;
+}
+/* phone circle */
+.phone-circle {
+  width: 45px;
+  height: 45px;
+  flex: 0 0 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eef7fc;
+  border-radius: 50%;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+.phone-button:hover .phone-circle {
+  background: #e5f3fb;
+  transform: scale(1.06);
+}
+.phone-circle img {
+  width: 19px;
+  height: auto;
+  object-fit: contain;
+}
+/* phone text */
+.phone-content {
+  display: block;
+  margin-left: 12px;
+}
+.phone-content small {
+  display: block;
+  margin-bottom: 2px;
+  color: #9aa3aa;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+}
+.phone-content strong {
+  display: block;
+  color: #17232c;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.25;
+  transition: color 0.2s ease;
+}
+.phone-button:hover .phone-content strong {
+  color: #0772ba;
+}
+.phone-arrow {
+  margin-left: auto;
+  color: #a9b1b7;
+  font-size: 18px;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+.phone-button:hover .phone-arrow {
+  color: #0772ba;
+  transform: translateX(4px);
+}
+/* =========================================================
+   ANIMATED BACKGROUND GLOWS
+========================================================= */
+.cta-glow {
+  position: absolute;
+  z-index: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(2px);
+}
+.cta-glow-one {
+  width: 360px;
+  height: 360px;
+  top: -210px;
+  left: 13%;
+  background: rgba(68, 172, 229, 0.16);
+  animation: glowFloatOne 8s ease-in-out infinite;
+}
+.cta-glow-two {
+  width: 270px;
+  height: 270px;
+  right: 31%;
+  bottom: -190px;
+  background: rgba(151, 201, 84, 0.1);
+  animation: glowFloatTwo 10s ease-in-out infinite;
+}
+@keyframes glowFloatOne {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(25px, 25px) scale(1.08);
+  }
+}
+@keyframes glowFloatTwo {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-25px, -18px);
+  }
+}
+/* =========================================================
+   LARGE MEDICAL CROSS
+========================================================= */
+.medical-cross {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 48%;
+  width: 160px;
+  height: 160px;
+  opacity: 0.035;
+  transform: translate(-50%, -50%) rotate(-8deg);
+  animation: crossFloat 9s ease-in-out infinite;
+  pointer-events: none;
+}
+.cross-horizontal,
+.cross-vertical {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #ffffff;
+  border-radius: 8px;
+  transform: translate(-50%, -50%);
+}
+.cross-horizontal {
+  width: 160px;
+  height: 54px;
+}
+.cross-vertical {
+  width: 54px;
+  height: 160px;
+}
+@keyframes crossFloat {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) rotate(-8deg);
+  }
+  50% {
+    transform: translate(-50%, -56%) rotate(-4deg);
+  }
+}
+/* =========================================================
+   LARGE LAPTOP
+========================================================= */
+@media (max-width: 1199px) {
+  .appointment-cta {
+    padding: 68px 0;
+  }
+  .cta-layout {
+    grid-template-columns:
+      minmax(0, 1fr)
+      370px;
+    gap: 55px;
+  }
+  .cta-content h2 {
+    font-size: 37px;
+  }
+  .cta-trust {
+    gap: 10px 18px;
+  }
+}
+/* =========================================================
+   TABLET
+========================================================= */
+@media (max-width: 991px) {
+  .appointment-cta {
+    padding: 60px 0;
+  }
+  .cta-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .cta-content {
+    max-width: 700px;
+  }
+  .cta-content h2 {
+    font-size: 35px;
+  }
+  .cta-actions-wrap {
+    justify-content: flex-start;
+  }
+  .cta-action-card {
+    max-width: 500px;
+  }
+  .medical-cross {
+    left: auto;
+    right: 5%;
+    transform: translateY(-50%) rotate(-8deg);
+  }
+  @keyframes crossFloat {
+    0%,
+    100% {
+      transform: translateY(-50%) rotate(-8deg);
+    }
+    50% {
+      transform: translateY(-56%) rotate(-4deg);
+    }
+  }
+}
+/* =========================================================
+   MOBILE
+========================================================= */
+@media (max-width: 767px) {
+  .appointment-cta {
+    padding: 50px 0;
+  }
+  .cta-layout {
+    gap: 33px;
+  }
+  .cta-eyebrow {
+    margin-bottom: 13px;
+  }
+  .eyebrow-text {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+  .eyebrow-line {
+    width: 25px;
+  }
+  .cta-content h2 {
+    margin-bottom: 15px;
+    font-size: 29px;
+    line-height: 1.22;
+  }
+  .cta-content > p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .cta-trust {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 24px;
+    gap: 11px;
+  }
+  .trust-item {
+    font-size: 11px;
+  }
+  .cta-action-card {
+    max-width: 100%;
+    padding: 28px 24px;
+    border-radius: 14px;
+  }
+  .cta-action-card::before {
+    left: 24px;
+  }
+  .cta-action-card h3 {
+    font-size: 20px;
+  }
+  .medical-cross {
+    display: none;
+  }
+}
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+@media (max-width: 480px) {
+  .appointment-cta {
+    padding: 43px 0;
+  }
+  .cta-content h2 {
+    font-size: 26px;
+  }
+  .cta-trust {
+    grid-template-columns: 1fr;
+  }
+  .cta-action-card {
+    padding: 27px 20px;
+  }
+  .cta-action-card::before {
+    left: 20px;
+  }
+  .book-button {
+    height: 53px;
+    padding-left: 17px;
+    font-size: 12px;
+  }
+  .phone-content strong {
+    font-size: 16px;
+  }
+}
+/* =========================================================
+   ACCESSIBILITY - REDUCE ANIMATION
+========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  .cta-content,
+  .cta-actions-wrap,
+  .cta-glow-one,
+  .cta-glow-two,
+  .medical-cross {
+    animation: none;
+  }
+  .book-button,
+  .cta-action-card,
+  .phone-circle,
+  .phone-arrow {
+    transition: none;
+  }
+}

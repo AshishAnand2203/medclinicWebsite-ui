@@ -1,0 +1,200 @@
+<section class="appointment-cta">
+
+    <!-- Decorative background -->
+    <div class="cta-glow cta-glow-one"></div>
+    <div class="cta-glow cta-glow-two"></div>
+
+    <div class="medical-cross" aria-hidden="true">
+        <span class="cross-horizontal"></span>
+        <span class="cross-vertical"></span>
+    </div>
+
+
+    <div class="container">
+
+        <div class="cta-layout">
+
+
+            <!-- =============================================
+                 LEFT CONTENT
+            ============================================== -->
+
+            <div class="cta-content">
+
+                <div class="cta-eyebrow">
+
+                    <span class="eyebrow-line"></span>
+
+                    <span class="eyebrow-text">
+                        {{ smallTitle }}
+                    </span>
+
+                </div>
+
+
+                <h2>
+                    {{ title }}
+                </h2>
+
+
+                <p>
+                    {{ description }}
+                </p>
+
+
+                <!-- TRUST POINTS -->
+
+                <div class="cta-trust">
+
+                    <div class="trust-item">
+
+                        <span class="trust-check">
+                            ✓
+                        </span>
+
+                        <span>
+                            Experienced Doctors
+                        </span>
+
+                    </div>
+
+
+                    <div class="trust-item">
+
+                        <span class="trust-check">
+                            ✓
+                        </span>
+
+                        <span>
+                            Family Healthcare
+                        </span>
+
+                    </div>
+
+
+                    <div class="trust-item">
+
+                        <span class="trust-check">
+                            ✓
+                        </span>
+
+                        <span>
+                            Convenient Booking
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =============================================
+                 RIGHT ACTION AREA
+            ============================================== -->
+
+            <div class="cta-actions-wrap">
+
+                <div class="cta-action-card">
+
+
+                    <div class="action-label">
+                        BOOK YOUR VISIT
+                    </div>
+
+
+                    <h3>
+                        Ready to see a doctor?
+                    </h3>
+
+
+                    <p>
+                        Book online in just a few moments.
+                    </p>
+
+
+                    <!-- BOOK BUTTON -->
+
+                    <a
+                        [href]="bookingUrl"
+                        target="_blank"
+                        rel="noopener"
+                        class="book-button">
+
+                        <span>
+                            Book an Appointment
+                        </span>
+
+                        <span class="book-arrow">
+                            <svg
+                                viewBox="0 0 24 24"
+                                aria-hidden="true">
+
+                                <path
+                                    d="M5 12h14M13 6l6 6-6 6">
+                                </path>
+
+                            </svg>
+                        </span>
+
+                    </a>
+
+
+                    <!-- DIVIDER -->
+
+                    <div class="action-divider">
+
+                        <span></span>
+
+                        <small>
+                            OR CALL US
+                        </small>
+
+                        <span></span>
+
+                    </div>
+
+
+                    <!-- PHONE -->
+
+                    <a
+                        [href]="phoneLink"
+                        class="phone-button">
+
+                        <span class="phone-circle">
+
+                            <img
+                                src="assets/images/callicon_hd.png"
+                                alt="Call">
+
+                        </span>
+
+
+                        <span class="phone-content">
+
+                            <small>
+                                SPEAK WITH OUR TEAM
+                            </small>
+
+                            <strong>
+                                {{ phone }}
+                            </strong>
+
+                        </span>
+
+
+                        <span class="phone-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

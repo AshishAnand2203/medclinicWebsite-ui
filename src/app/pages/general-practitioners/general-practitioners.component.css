@@ -1,0 +1,1610 @@
+:host {
+    display: block;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.gp-page {
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   INTRO SECTION
+========================================================= */
+
+.gp-intro-section {
+    position: relative;
+    overflow: hidden;
+    padding: 72px 0 62px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5fafe 0%,
+            #ffffff 47%,
+            #f7fbf2 100%
+        );
+
+    border-bottom: 1px solid #e7eef1;
+}
+
+
+/* BLUE DECORATION */
+
+.gp-intro-section::before {
+    content: '';
+    position: absolute;
+
+    width: 330px;
+    height: 330px;
+
+    top: -190px;
+    right: -90px;
+
+    border: 55px solid rgba(7, 114, 186, 0.035);
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+/* GREEN DECORATION */
+
+.gp-intro-section::after {
+    content: '';
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    left: -130px;
+    bottom: -160px;
+
+    border: 40px solid rgba(151, 201, 84, 0.06);
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+.gp-intro {
+    position: relative;
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.05fr)
+        minmax(320px, 0.95fr);
+
+    align-items: center;
+
+    gap: 75px;
+}
+
+
+/* =========================================================
+   INTRO LABEL
+========================================================= */
+
+.gp-section-label {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    margin-bottom: 16px;
+
+    color: #6f9e38;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+
+.gp-label-line {
+    display: block;
+
+    width: 34px;
+    height: 3px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #0772ba,
+            #97c954
+        );
+}
+
+
+/* =========================================================
+   INTRO TITLE
+========================================================= */
+
+.gp-intro h1 {
+    max-width: 700px;
+
+    margin: 0;
+
+    color: #183946;
+
+    font-size: 42px;
+    font-weight: 700;
+
+    line-height: 1.18;
+
+    letter-spacing: -1px;
+}
+
+
+.gp-intro h1 strong {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #0772ba;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   INTRO RIGHT
+========================================================= */
+
+.gp-intro-right {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 58px minmax(0, 1fr);
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    padding: 25px;
+
+    background: rgba(255, 255, 255, 0.84);
+
+    border: 1px solid #e1ebef;
+    border-radius: 8px 25px 8px 25px;
+
+    box-shadow:
+        0 15px 45px rgba(24, 57, 70, 0.07);
+}
+
+
+.gp-intro-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 58px;
+    height: 58px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0772ba,
+            #08639f
+        );
+
+    border-radius: 17px 5px 17px 5px;
+
+    font-size: 19px;
+
+    box-shadow:
+        0 9px 20px rgba(7, 114, 186, 0.2);
+}
+
+
+/* =========================================================
+   CMS INTRO CONTENT
+
+   IMPORTANT:
+   ::ng-deep is used because the HTML comes from [innerHTML]
+========================================================= */
+
+:host ::ng-deep .intro_text {
+    color: #617982;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+:host ::ng-deep .intro_text p {
+    margin: 0 0 12px;
+
+    color: #617982;
+
+    font-size: 15px !important;
+
+    line-height: 1.7;
+}
+
+
+:host ::ng-deep .intro_text p:last-child {
+    margin-bottom: 0;
+}
+
+
+:host ::ng-deep .intro_text strong {
+    color: #284752;
+}
+
+
+/* =========================================================
+   DOCTORS SECTION
+========================================================= */
+
+.gp-doctors-section {
+    position: relative;
+
+    padding: 75px 0 95px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #fbfcfd 100%
+        );
+}
+
+
+/* =========================================================
+   DOCTOR CARD
+========================================================= */
+
+.gp-doctor-card {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        310px
+        minmax(0, 1fr);
+
+    align-items: stretch;
+
+    max-width: 1160px;
+
+    margin:
+        0 auto
+        42px;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #dfe9ed;
+
+    border-radius:
+        10px 34px 10px 34px;
+
+    box-shadow:
+        0 18px 55px rgba(24, 57, 70, 0.08);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+.gp-doctor-card:hover {
+    transform: translateY(-4px);
+
+    border-color: #cadde5;
+
+    box-shadow:
+        0 26px 70px rgba(24, 57, 70, 0.12);
+}
+
+
+.gp-doctor-card:last-child {
+    margin-bottom: 0;
+}
+
+
+/* TOP ACCENT */
+
+.gp-doctor-card::before {
+    content: '';
+
+    position: absolute;
+
+    z-index: 5;
+
+    top: 0;
+    left: 310px;
+
+    width: 100px;
+    height: 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #0772ba,
+            #97c954
+        );
+}
+
+
+/* =========================================================
+   PROFILE SIDE
+========================================================= */
+
+.gp-profile-side {
+    position: relative;
+
+    padding: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #edf6fa 0%,
+            #f8fbfc 57%,
+            #f5f9f0 100%
+        );
+
+    border-right: 1px solid #e0e9ed;
+}
+
+
+/* =========================================================
+   PROFILE IMAGE
+========================================================= */
+
+.gp-profile-image {
+    position: relative;
+
+    width: 100%;
+    height: 350px;
+
+    overflow: hidden;
+
+    background: #e7f0f4;
+
+    border-radius:
+        8px 27px 8px 27px;
+
+    box-shadow:
+        0 12px 28px rgba(27, 63, 78, 0.08);
+}
+
+
+.gp-profile-image img {
+    position: relative;
+    z-index: 1;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: top center;
+
+    transition: transform 0.4s ease;
+}
+
+
+.gp-doctor-card:hover .gp-profile-image img {
+    transform: scale(1.025);
+}
+
+
+/* IMAGE OVERLAY */
+
+.gp-image-overlay {
+    position: absolute;
+
+    z-index: 2;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 60%,
+            rgba(13, 46, 60, 0.35) 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   IMAGE BADGE
+========================================================= */
+
+.gp-image-badge {
+    position: absolute;
+
+    z-index: 3;
+
+    left: 16px;
+    right: 16px;
+    bottom: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    min-height: 40px;
+
+    padding: 9px 13px;
+
+    color: #ffffff;
+
+    background: rgba(17, 55, 71, 0.88);
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    border-radius:
+        5px 13px 5px 13px;
+
+    backdrop-filter: blur(8px);
+
+    font-size: 11px;
+    font-weight: 600;
+
+    line-height: 1.4;
+}
+
+
+.gp-image-badge i {
+    color: #a9d46b;
+}
+
+
+/* =========================================================
+   LANGUAGE / CARE INFO
+========================================================= */
+
+.gp-profile-language,
+.gp-care-note {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 13px;
+
+    padding: 13px 14px;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    border: 1px solid #dfe9ed;
+
+    border-radius:
+        5px 14px 5px 14px;
+}
+
+
+.gp-language-icon,
+.gp-care-note > i {
+    flex: 0 0 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    color: #0772ba;
+
+    background: #eaf5fa;
+
+    border-radius:
+        11px 4px 11px 4px;
+
+    font-size: 14px;
+}
+
+
+.gp-care-note > i {
+    color: #6d9d34;
+
+    background: #f0f7e8;
+}
+
+
+.gp-profile-language span,
+.gp-care-note span {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #89999f;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 0.8px;
+
+    text-transform: uppercase;
+}
+
+
+.gp-profile-language strong,
+.gp-care-note strong {
+    display: block;
+
+    color: #3d5660;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   PROFILE MAIN
+========================================================= */
+
+.gp-profile-main {
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+
+    padding: 44px 48px 42px;
+}
+
+
+/* =========================================================
+   PROFILE HEADING
+========================================================= */
+
+.gp-profile-heading {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+
+.gp-heading-content {
+    min-width: 0;
+}
+
+
+.gp-profile-eyebrow {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 9px;
+
+    color: #709d3c;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1.3px;
+
+    text-transform: uppercase;
+}
+
+
+.gp-profile-eyebrow span {
+    display: block;
+
+    width: 22px;
+    height: 2px;
+
+    background: #97c954;
+}
+
+
+/* DOCTOR NAME */
+
+.gp-profile-heading h2 {
+    margin: 0 0 7px;
+
+    color: #183946;
+
+    font-size: 30px;
+    font-weight: 700;
+
+    line-height: 1.25;
+
+    letter-spacing: -0.45px;
+}
+
+
+/* QUALIFICATION */
+
+.gp-profile-qualification {
+    margin: 0;
+
+    color: #0772ba;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   MEDICAL SYMBOL
+========================================================= */
+
+.gp-medical-symbol {
+    flex: 0 0 56px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 56px;
+    height: 56px;
+
+    color: #0772ba;
+
+    background:
+        linear-gradient(
+            145deg,
+            #eaf5fa,
+            #f5fafb
+        );
+
+    border: 1px solid #d9e9ef;
+
+    border-radius:
+        17px 5px 17px 5px;
+
+    font-size: 19px;
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.gp-profile-divider {
+    width: 100%;
+    height: 1px;
+
+    margin: 24px 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #dce7eb,
+            transparent
+        );
+}
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.gp-profile-summary {
+    max-width: 800px;
+
+    margin:
+        0 0
+        26px;
+
+    color: #5c747e;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   INTEREST SECTION
+========================================================= */
+
+.gp-interest-section {
+    margin-bottom: 26px;
+
+    padding: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8fbfc,
+            #ffffff
+        );
+
+    border: 1px solid #e2eaed;
+
+    border-radius:
+        6px 18px 6px 18px;
+}
+
+
+/* TITLE */
+
+.gp-interest-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    margin-bottom: 16px;
+}
+
+
+.gp-interest-title-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    color: #ffffff;
+
+    background: #0772ba;
+
+    border-radius:
+        11px 4px 11px 4px;
+
+    font-size: 13px;
+}
+
+
+.gp-interest-title > div > span {
+    display: block;
+
+    margin-bottom: 1px;
+
+    color: #8a999f;
+
+    font-size: 8px;
+    font-weight: 700;
+
+    letter-spacing: 0.9px;
+
+    text-transform: uppercase;
+}
+
+
+.gp-interest-title strong {
+    color: #294853;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* CHIPS */
+
+.gp-interest-chips {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+
+.gp-interest-chip {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 9px 12px;
+
+    color: #506870;
+
+    background: #ffffff;
+
+    border: 1px solid #dce7ea;
+
+    border-radius:
+        4px 11px 4px 11px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    line-height: 1.4;
+}
+
+
+.gp-interest-chip i {
+    color: #77a943;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   DOCTOR CMS CONTENT
+
+   IMPORTANT:
+   Content comes from [innerHTML].
+========================================================= */
+
+.gp-doctor-content {
+    margin-bottom: 5px;
+}
+
+
+:host ::ng-deep .gp-doctor-content {
+    color: #5d747d;
+
+    font-size: 15px !important;
+
+    line-height: 1.7;
+}
+
+
+:host ::ng-deep .gp-doctor-content p {
+    margin: 0 0 15px;
+
+    color: #5d747d;
+
+    font-size: 15px !important;
+
+    line-height: 1.7;
+}
+
+
+:host ::ng-deep .gp-doctor-content p:last-child {
+    margin-bottom: 0;
+}
+
+
+:host ::ng-deep .gp-doctor-content h1,
+:host ::ng-deep .gp-doctor-content h2,
+:host ::ng-deep .gp-doctor-content h3,
+:host ::ng-deep .gp-doctor-content h4 {
+    margin: 22px 0 10px;
+
+    color: #183946;
+
+    font-weight: 700;
+
+    line-height: 1.35;
+}
+
+
+:host ::ng-deep .gp-doctor-content h2 {
+    font-size: 23px !important;
+}
+
+
+:host ::ng-deep .gp-doctor-content h3 {
+    font-size: 20px !important;
+}
+
+
+:host ::ng-deep .gp-doctor-content ul,
+:host ::ng-deep .gp-doctor-content ol {
+    margin: 12px 0;
+
+    padding-left: 21px;
+}
+
+
+:host ::ng-deep .gp-doctor-content li {
+    margin-bottom: 6px;
+
+    font-size: 15px !important;
+}
+
+
+:host ::ng-deep .gp-doctor-content a {
+    color: #0772ba;
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.gp-profile-actions {
+    display: flex;
+
+    align-items: stretch;
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: auto;
+    padding-top: 30px;
+}
+
+
+/* =========================================================
+   BOOK APPOINTMENT
+========================================================= */
+
+.gp-primary-action {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    min-height: 56px;
+
+    padding: 8px 17px 8px 10px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0772ba,
+            #08639f
+        );
+
+    border: 1px solid #0772ba;
+
+    border-radius:
+        6px 16px 6px 16px;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 10px 23px rgba(7, 114, 186, 0.18);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.gp-primary-action:hover {
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 14px 30px rgba(7, 114, 186, 0.25);
+}
+
+
+.gp-action-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    color: #ffffff;
+
+    background: rgba(255, 255, 255, 0.14);
+
+    border-radius:
+        10px 4px 10px 4px;
+}
+
+
+.gp-action-text {
+    display: block;
+
+    min-width: 165px;
+}
+
+
+.gp-action-text small {
+    display: block;
+
+    margin-bottom: 1px;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 0.4px;
+}
+
+
+.gp-action-text strong {
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+.gp-action-arrow {
+    margin-left: 4px;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   PHONE BUTTON
+========================================================= */
+
+.gp-call-action {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    min-height: 56px;
+
+    padding: 8px 17px 8px 10px;
+
+    color: #344f59;
+
+    background: #ffffff;
+
+    border: 1px solid #dce7ea;
+
+    border-radius:
+        6px 16px 6px 16px;
+
+    text-decoration: none;
+
+    transition:
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.gp-call-action:hover {
+    color: #344f59;
+
+    border-color: #97c954;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 23px rgba(34, 68, 82, 0.08);
+}
+
+
+.gp-call-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    color: #6c9f32;
+
+    background: #eff7e7;
+
+    border-radius:
+        10px 4px 10px 4px;
+}
+
+
+.gp-call-action small {
+    display: block;
+
+    margin-bottom: 1px;
+
+    color: #8c9ba0;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    text-transform: uppercase;
+}
+
+
+.gp-call-action strong {
+    display: block;
+
+    color: #344f59;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.gp-empty {
+    max-width: 650px;
+
+    margin: 20px auto;
+
+    padding: 65px 35px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f6fafc,
+            #ffffff
+        );
+
+    border: 1px solid #e0e9ec;
+
+    border-radius:
+        10px 30px 10px 30px;
+
+    box-shadow:
+        0 15px 45px rgba(25, 57, 70, 0.05);
+}
+
+
+.gp-empty-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 68px;
+    height: 68px;
+
+    margin:
+        0 auto
+        18px;
+
+    color: #0772ba;
+
+    background: #eaf4f9;
+
+    border-radius:
+        21px 7px 21px 7px;
+
+    font-size: 24px;
+}
+
+
+.gp-empty h3 {
+    margin:
+        0 0
+        8px;
+
+    color: #183946;
+
+    font-size: 22px;
+    font-weight: 700;
+}
+
+
+.gp-empty p {
+    margin: 0;
+
+    color: #687d85;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   LOADING / ERROR
+========================================================= */
+
+.gp-state-section {
+    min-height: 350px;
+
+    padding: 90px 0;
+
+    background: #ffffff;
+}
+
+
+.gp-loading,
+.gp-error {
+    text-align: center;
+}
+
+
+.gp-loading .spinner-border {
+    color: #0772ba;
+}
+
+
+.gp-loading p {
+    margin:
+        14px 0 0;
+
+    color: #60747d;
+
+    font-size: 14px;
+}
+
+
+.gp-error-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 58px;
+    height: 58px;
+
+    margin:
+        0 auto
+        16px;
+
+    color: #dc3545;
+
+    background: #fff4f5;
+
+    border-radius:
+        18px 6px 18px 6px;
+
+    font-size: 20px;
+}
+
+
+.gp-error h3 {
+    margin:
+        0 0
+        7px;
+
+    color: #183946;
+
+    font-size: 21px;
+}
+
+
+.gp-error p {
+    margin: 0;
+
+    color: #687d85;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1199px) {
+
+    .gp-doctor-card {
+        grid-template-columns:
+            285px
+            minmax(0, 1fr);
+    }
+
+
+    .gp-doctor-card::before {
+        left: 285px;
+    }
+
+
+    .gp-profile-main {
+        padding:
+            38px
+            35px;
+    }
+
+
+    .gp-profile-image {
+        height: 330px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .gp-intro {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+
+    .gp-intro-right {
+        max-width: 720px;
+    }
+
+
+    .gp-doctor-card {
+        grid-template-columns:
+            260px
+            minmax(0, 1fr);
+    }
+
+
+    .gp-doctor-card::before {
+        left: 260px;
+    }
+
+
+    .gp-profile-side {
+        padding: 20px;
+    }
+
+
+    .gp-profile-image {
+        height: 310px;
+    }
+
+
+    .gp-profile-main {
+        padding:
+            34px
+            28px;
+    }
+
+
+    .gp-profile-heading h2 {
+        font-size: 27px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .gp-intro-section {
+        padding:
+            48px 0
+            42px;
+    }
+
+
+    .gp-intro h1 {
+        font-size: 31px;
+    }
+
+
+    .gp-intro-right {
+        grid-template-columns:
+            50px
+            minmax(0, 1fr);
+
+        padding: 19px;
+    }
+
+
+    .gp-intro-icon {
+        width: 50px;
+        height: 50px;
+
+        font-size: 16px;
+    }
+
+
+    .gp-doctors-section {
+        padding:
+            50px 0
+            65px;
+    }
+
+
+    .gp-doctor-card {
+        display: block;
+
+        margin-bottom: 30px;
+
+        border-radius:
+            8px 25px 8px 25px;
+    }
+
+
+    .gp-doctor-card::before {
+        left: 0;
+
+        width: 90px;
+    }
+
+
+    .gp-profile-side {
+        padding: 20px;
+
+        border-right: 0;
+        border-bottom: 1px solid #e0e9ed;
+    }
+
+
+    .gp-profile-image {
+        max-width: 440px;
+
+        height: 430px;
+
+        margin: 0 auto;
+    }
+
+
+    .gp-profile-language,
+    .gp-care-note {
+        max-width: 440px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .gp-profile-main {
+        padding:
+            32px
+            24px;
+    }
+
+
+    .gp-profile-heading h2 {
+        font-size: 26px;
+    }
+
+
+    .gp-profile-summary {
+        font-size: 15px;
+    }
+
+
+    :host ::ng-deep .gp-doctor-content,
+    :host ::ng-deep .gp-doctor-content p,
+    :host ::ng-deep .gp-doctor-content li {
+        font-size: 15px !important;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .gp-intro-section {
+        padding:
+            42px 0
+            35px;
+    }
+
+
+    .gp-intro h1 {
+        font-size: 27px;
+
+        letter-spacing: -0.5px;
+    }
+
+
+    .gp-section-label {
+        font-size: 10px;
+    }
+
+
+    .gp-intro-right {
+        display: block;
+
+        padding: 18px;
+    }
+
+
+    .gp-intro-icon {
+        margin-bottom: 15px;
+    }
+
+
+    :host ::ng-deep .intro_text,
+    :host ::ng-deep .intro_text p {
+        font-size: 14px !important;
+    }
+
+
+    .gp-profile-side {
+        padding: 15px;
+    }
+
+
+    .gp-profile-image {
+        height: 350px;
+    }
+
+
+    .gp-profile-main {
+        padding:
+            28px
+            19px;
+    }
+
+
+    .gp-profile-heading {
+        gap: 14px;
+    }
+
+
+    .gp-profile-heading h2 {
+        font-size: 24px;
+    }
+
+
+    .gp-profile-qualification {
+        font-size: 12px;
+    }
+
+
+    .gp-medical-symbol {
+        flex-basis: 46px;
+
+        width: 46px;
+        height: 46px;
+
+        font-size: 16px;
+    }
+
+
+    .gp-interest-section {
+        padding: 16px;
+    }
+
+
+    .gp-interest-chip {
+        width: 100%;
+    }
+
+
+    .gp-profile-actions {
+        display: block;
+    }
+
+
+    .gp-primary-action,
+    .gp-call-action {
+        width: 100%;
+
+        margin-bottom: 10px;
+    }
+
+
+    .gp-action-text {
+        flex: 1;
+    }
+
+}
